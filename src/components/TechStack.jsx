@@ -38,10 +38,9 @@ const TechStack = () => {
     { name: "PHP", icon: "/php-original.svg" },
     { name: "C++", icon: "/cplusplus-original.svg" },
     { name: "Git", icon: "/git.svg" },
-    { name: "GitHub", icon: "/git.svg" }, // Using Git icon as placeholder
     { name: "Arduino", icon: "/arduino.svg" },
     { name: "MySQL", icon: "/mysql-original-wordmark.svg" },
-    { name: "Firebase", icon: "/nodejs-original-wordmark.svg" }, // Using Node.js icon as placeholder
+    { name: "Firebase", icon: "/firebase.svg" },
     { name: "Android Studio", icon: "/nodejs-original-wordmark.svg" } // Using Node.js icon as placeholder
   ]
 
@@ -85,7 +84,7 @@ const TechStack = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 mb-16">
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 mb-16">
           {technologies.map((tech, index) => (
             <div
               key={tech.name}
@@ -96,13 +95,12 @@ const TechStack = () => {
                 transitionDelay: `${index * 150}ms`
               }}
             >
-              <div className="flex flex-col items-center space-y-3 p-4 rounded-lg hover:bg-primary/5 transition-all duration-300 hover:scale-105">
+              <div className="flex flex-col items-center justify-center p-6 rounded-lg hover:bg-primary/5 transition-all duration-300 hover:scale-105">
                 <img 
                   src={tech.icon} 
                   alt={tech.name}
-                  className="w-12 h-12 object-contain"
+                  className="w-16 h-16 object-contain"
                 />
-                <div className="font-medium text-sm text-center">{tech.name}</div>
               </div>
             </div>
           ))}
@@ -120,7 +118,7 @@ const TechStack = () => {
           </Card>
           <Card className="border-border/50 text-center hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
             <CardContent className="pt-6">
-              <div className="text-3xl font-bold text-accent mb-2">17+</div>
+              <div className="text-3xl font-bold text-accent mb-2">16+</div>
               <div className="text-sm text-muted-foreground">Technologies Mastered</div>
             </CardContent>
           </Card>

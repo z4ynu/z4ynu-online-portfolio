@@ -26,22 +26,22 @@ const TechStack = () => {
   }, [])
 
   const technologies = [
-    { name: "HTML5", icon: "/html5-original-wordmark.svg" },
-    { name: "CSS", icon: "/css3-original-wordmark.svg" },
-    { name: "JavaScript", icon: "/javascript-original.svg" },
-    { name: "ReactJS", icon: "/react-original-wordmark.svg" },
-    { name: "TailwindCSS", icon: "/tailwind.svg" },
-    { name: "NextJS", icon: "/nodejs-original-wordmark.svg" }, // Using Node.js icon as placeholder
-    { name: "Java", icon: "/java-original.svg" },
-    { name: "Python", icon: "/python-original.svg" },
-    { name: "C#", icon: "/csharp-original.svg" },
-    { name: "PHP", icon: "/php-original.svg" },
-    { name: "C++", icon: "/cplusplus-original.svg" },
-    { name: "Git", icon: "/git.svg" },
-    { name: "Arduino", icon: "/arduino.svg" },
-    { name: "MySQL", icon: "/mysql-original-wordmark.svg" },
-    { name: "Firebase", icon: "/firebase.svg" },
-    { name: "Android Studio", icon: "/nodejs-original-wordmark.svg" } // Using Node.js icon as placeholder
+    { name: "HTML5", icon: "/icons/html5-original-wordmark.svg" },
+    { name: "CSS", icon: "/icons/css3-original-wordmark.svg" },
+    { name: "JavaScript", icon: "/icons/javascript-original.svg" },
+    { name: "ReactJS", icon: "/icons/react-original-wordmark.svg" },
+    { name: "TailwindCSS", icon: "/icons/tailwind.svg" },
+    { name: "NextJS", icon: "/icons/nodejs-original-wordmark.svg" }, // Using Node.js icon as placeholder
+    { name: "Java", icon: "/icons/java-original.svg" },
+    { name: "Python", icon: "/icons/python-original.svg" },
+    { name: "C#", icon: "/icons/csharp-original.svg" },
+    { name: "PHP", icon: "/icons/php-original.svg" },
+    { name: "C++", icon: "/icons/cplusplus-original.svg" },
+    { name: "Git", icon: "/icons/git.svg" },
+    { name: "Arduino", icon: "/icons/arduino.svg" },
+    { name: "MySQL", icon: "/icons/mysql-original-wordmark.svg" },
+    { name: "Firebase", icon: "/icons/firebase.svg" },
+    { name: "Android Studio", icon: "/icons/nodejs-original-wordmark.svg" } // Using Node.js icon as placeholder
   ]
 
   const getTechColor = (techName) => {
@@ -84,7 +84,7 @@ const TechStack = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 mb-16">
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-10">
           {technologies.map((tech, index) => (
             <div
               key={tech.name}
@@ -95,40 +95,17 @@ const TechStack = () => {
                 transitionDelay: `${index * 150}ms`
               }}
             >
-              <div className="flex flex-col items-center justify-center p-6 rounded-lg hover:bg-primary/5 transition-all duration-300 hover:scale-105">
+              <div className="flex flex-col items-center justify-center p-8 rounded-lg hover:bg-primary/5 transition-all duration-300 hover:scale-105">
                 <img 
                   src={tech.icon} 
                   alt={tech.name}
-                  className="w-16 h-16 object-contain"
+                  className="w-20 h-20 object-contain"
                 />
               </div>
             </div>
           ))}
         </div>
 
-        {/* Skills Overview */}
-        <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-1000 delay-500 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <Card className="border-border/50 text-center hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
-            <CardContent className="pt-6">
-              <div className="text-3xl font-bold text-primary mb-2">3+</div>
-              <div className="text-sm text-muted-foreground">Years of Experience</div>
-            </CardContent>
-          </Card>
-          <Card className="border-border/50 text-center hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
-            <CardContent className="pt-6">
-              <div className="text-3xl font-bold text-accent mb-2">16+</div>
-              <div className="text-sm text-muted-foreground">Technologies Mastered</div>
-            </CardContent>
-          </Card>
-          <Card className="border-border/50 text-center hover:border-secondary/50 transition-all duration-300 hover:shadow-lg">
-            <CardContent className="pt-6">
-              <div className="text-3xl font-bold text-secondary-foreground mb-2">10+</div>
-              <div className="text-sm text-muted-foreground">Projects Completed</div>
-            </CardContent>
-          </Card>
-        </div>
       </div>
     </section>
   )

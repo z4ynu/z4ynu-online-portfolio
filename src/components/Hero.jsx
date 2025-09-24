@@ -12,63 +12,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col bg-hero relative overflow-hidden">
-      {/* Creative Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Animated Background Circles */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full animate-bounce"></div>
-        <div className="absolute bottom-32 left-1/4 w-20 h-20 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-full animate-bounce"></div>
-        
-        {/* Floating Musical Notes */}
-        <div className="absolute top-1/4 left-1/4 animate-float">
-          <svg className="w-6 h-6 text-purple-400/30" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
-          </svg>
-        </div>
-        <div className="absolute top-1/3 right-1/4 animate-float-delayed">
-          <svg className="w-4 h-4 text-pink-400/30" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
-          </svg>
-        </div>
-        
-        {/* Gaming Controller */}
-        <div className="absolute bottom-1/4 left-1/3 animate-float">
-          <svg className="w-8 h-8 text-blue-400/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M15 14h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-        </div>
-        
-        {/* Book Icons */}
-        <div className="absolute top-1/2 left-1/6 animate-float-delayed">
-          <svg className="w-5 h-5 text-green-400/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-          </svg>
-        </div>
-        
-        {/* Camera Icon */}
-        <div className="absolute bottom-1/3 right-1/5 animate-float">
-          <svg className="w-6 h-6 text-orange-400/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
-          </svg>
-        </div>
-        
-        {/* Cooking Utensils */}
-        <div className="absolute top-2/3 right-1/6 animate-float-delayed">
-          <svg className="w-5 h-5 text-yellow-400/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"/>
-          </svg>
-        </div>
-        
-        {/* Fitness Lightning */}
-        <div className="absolute top-1/6 right-1/3 animate-float">
-          <svg className="w-7 h-7 text-red-400/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z"/>
-          </svg>
-        </div>
-      </div>
+    <section className="min-h-screen flex flex-col bg-hero">
       {/* Navigation */}
       <nav className="flex items-center justify-between p-6 md:p-8 bg-black/20 backdrop-blur-sm border-b border-white/10">
         <div className="text-xl font-bold text-primary">z4ynu</div>
@@ -134,14 +78,14 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-6">
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="text-lg px-8 py-4 font-semibold bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="text-lg px-8 py-4 font-semibold bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
               >
                 Get In Touch
               </Button>
               <Button
                 variant="outline"
                 onClick={() => scrollToSection("projects")}
-                className="text-lg px-8 py-4 font-semibold border-2 border-primary/50 hover:border-primary hover:bg-primary/10 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="text-lg px-8 py-4 font-semibold border-2 border-primary/50 hover:border-primary hover:bg-primary/10 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
               >
                 View My Work
               </Button>

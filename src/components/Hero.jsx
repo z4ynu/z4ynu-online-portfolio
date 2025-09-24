@@ -63,29 +63,29 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3">
-              <Badge variant="secondary" className="text-sm px-3 py-1">
+            <div className="flex flex-wrap gap-4">
+              <Badge variant="secondary" className="text-base px-4 py-2 font-semibold">
                 Web Developer
               </Badge>
-              <Badge variant="secondary" className="text-sm px-3 py-1">
+              <Badge variant="secondary" className="text-base px-4 py-2 font-semibold">
                 Freelance Writer
               </Badge>
-              <Badge variant="secondary" className="text-sm px-3 py-1">
+              <Badge variant="secondary" className="text-base px-4 py-2 font-semibold">
                 Music Tutor
               </Badge>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-6">
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="text-base px-6 py-3"
+                className="text-lg px-8 py-4 font-semibold bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Get In Touch
               </Button>
               <Button
                 variant="outline"
                 onClick={() => scrollToSection("projects")}
-                className="text-base px-6 py-3"
+                className="text-lg px-8 py-4 font-semibold border-2 border-primary/50 hover:border-primary hover:bg-primary/10 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 View My Work
               </Button>
@@ -157,9 +157,9 @@ const Hero = () => {
                 </div>
               </div>
               {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+              <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-primary/15 border-2 border-primary/30 flex items-center justify-center shadow-lg">
                 <svg
-                  className="w-8 h-8 text-primary"
+                  className="w-10 h-10 text-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -172,9 +172,9 @@ const Hero = () => {
                   />
                 </svg>
               </div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center">
+              <div className="absolute -bottom-6 -left-6 w-16 h-16 rounded-full bg-accent/15 border-2 border-accent/30 flex items-center justify-center shadow-lg">
                 <svg
-                  className="w-6 h-6 text-accent"
+                  className="w-8 h-8 text-accent"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -187,9 +187,9 @@ const Hero = () => {
                   />
                 </svg>
               </div>
-              <div className="absolute top-1/2 -left-8 w-10 h-10 rounded-full bg-secondary/50 border border-border flex items-center justify-center">
+              <div className="absolute top-1/2 -left-10 w-14 h-14 rounded-full bg-secondary/60 border-2 border-border flex items-center justify-center shadow-lg">
                 <svg
-                  className="w-5 h-5 text-foreground"
+                  className="w-7 h-7 text-foreground"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

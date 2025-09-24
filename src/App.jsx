@@ -11,9 +11,9 @@ function App() {
   return (
     <div className="min-h-screen text-foreground">
       <Hero />
+      <TechStack />
       <About />
       <Services />
-      <TechStack />
       <Projects />
       <Hobbies />
       <Contact />

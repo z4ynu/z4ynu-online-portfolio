@@ -9,7 +9,7 @@ const Projects = () => {
     {
       title: "E-Commerce Platform",
       description: "A full-stack e-commerce solution with modern UI/UX, payment integration, and admin dashboard.",
-      image: "/modern-ecommerce-interface.png",
+      image: "/images/modern-ecommerce-interface.png",
       technologies: ["React", "Next.js", "TailwindCSS", "Firebase", "Stripe"],
       category: "Web Development",
       status: "Completed",
@@ -22,7 +22,7 @@ const Projects = () => {
       title: "Task Management App",
       description:
         "A collaborative task management application with real-time updates and team collaboration features.",
-      image: "/task-management-dashboard.png",
+      image: "/projects/task-management-dashboard.png",
       technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
       category: "Web Development",
       status: "In Progress",
@@ -34,7 +34,7 @@ const Projects = () => {
     {
       title: "Weather Forecast App",
       description: "A responsive weather application with location-based forecasts and interactive maps.",
-      image: "/weather-app-interface-with-maps.jpg",
+      image: "/projects/weather-app-interface-with-maps.jpg",
       technologies: ["React", "TypeScript", "OpenWeather API", "Mapbox"],
       category: "Web Development",
       status: "Completed",
@@ -46,7 +46,7 @@ const Projects = () => {
     {
       title: "Portfolio Website",
       description: "A personal portfolio website showcasing projects and skills with modern design principles.",
-      image: "/portfolio-website-design.png",
+      image: "/images/portfolio-website-design.png",
       technologies: ["Next.js", "TailwindCSS", "Framer Motion"],
       category: "Web Development",
       status: "Completed",
@@ -58,7 +58,7 @@ const Projects = () => {
     {
       title: "Music Learning Platform",
       description: "An educational platform for music theory and instrument learning with interactive lessons.",
-      image: "/music-learning-app-interface.jpg",
+      image: "/projects/music-learning-app-interface.jpg",
       technologies: ["React", "Firebase", "Web Audio API"],
       category: "Education",
       status: "In Progress",
@@ -70,7 +70,7 @@ const Projects = () => {
     {
       title: "Blog CMS",
       description: "A content management system for bloggers with markdown support and SEO optimization.",
-      image: "/blog-cms-dashboard-interface.jpg",
+      image: "/projects/blog-cms-dashboard-interface.jpg",
       technologies: ["Next.js", "MDX", "PostgreSQL", "Prisma"],
       category: "Web Development",
       status: "Completed",

@@ -144,7 +144,7 @@ const Hero = () => {
                 <div className="w-64 h-64 rounded-full bg-card border border-border flex items-center justify-center">
                   <div className="w-64 h-64 rounded-full bg-card border border-border flex items-center justify-center overflow-hidden">
                     <img
-                      src="/zaynu.jpg"
+                      src="/images/zaynu.jpg"
                       alt="Zy Henzo S. Nuñez"
                       className="w-full h-full object-cover"
                     />

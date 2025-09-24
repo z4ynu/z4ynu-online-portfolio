@@ -122,21 +122,16 @@ const Hero = () => {
                 </svg>
               </a>
               <a
-                href="mailto:contact@z4ynu.dev"
+                href="mailto:zyhenzonunez@gmail.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <svg
                   className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
+                  fill="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
+                  <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h3.819L12 8.73l6.545-4.91h3.819c.904 0 1.636.732 1.636 1.636z"/>
+                  <path d="M12 8.73L5.455 3.82H1.636A1.636 1.636 0 0 0 0 5.457v13.909c0 .904.732 1.636 1.636 1.636h3.819V11.73L12 16.64l6.545-4.91v9.273h3.819c.904 0 1.636-.732 1.636-1.636V5.457c0-.904-.732-1.636-1.636-1.636h-3.819L12 8.73z"/>
                 </svg>
               </a>
             </div>

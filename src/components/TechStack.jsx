@@ -85,26 +85,25 @@ const TechStack = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mb-16">
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 mb-16">
           {technologies.map((tech, index) => (
             <div
               key={tech.name}
-              className={`transition-all duration-700 delay-${index * 100} ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+              className={`transition-all duration-500 ease-out ${
+                isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
               }`}
+              style={{
+                transitionDelay: `${index * 150}ms`
+              }}
             >
-              <Card className={`border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg ${getTechColor(tech.name)}`}>
-                <CardContent className="p-4 text-center">
-                  <div className="flex flex-col items-center space-y-2">
-                    <img 
-                      src={tech.icon} 
-                      alt={tech.name}
-                      className="w-8 h-8 object-contain"
-                    />
-                    <div className="font-semibold text-xs">{tech.name}</div>
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="flex flex-col items-center space-y-3 p-4 rounded-lg hover:bg-primary/5 transition-all duration-300 hover:scale-105">
+                <img 
+                  src={tech.icon} 
+                  alt={tech.name}
+                  className="w-12 h-12 object-contain"
+                />
+                <div className="font-medium text-sm text-center">{tech.name}</div>
+              </div>
             </div>
           ))}
         </div>

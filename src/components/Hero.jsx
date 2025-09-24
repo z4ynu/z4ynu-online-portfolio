@@ -12,7 +12,23 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col bg-hero">
+    <section className="min-h-screen flex flex-col bg-hero relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Floating circles */}
+        <div className="absolute top-20 left-10 w-4 h-4 bg-primary/20 rounded-full animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-6 h-6 bg-accent/20 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute bottom-40 left-20 w-3 h-3 bg-blue-400/20 rounded-full animate-pulse delay-2000"></div>
+        <div className="absolute bottom-20 right-10 w-5 h-5 bg-green-400/20 rounded-full animate-pulse delay-500"></div>
+        
+        {/* Gradient orbs */}
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-xl animate-float-delayed"></div>
+        
+        {/* Hobby-themed decorative elements */}
+        <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-yellow-400/30 rounded-full animate-bounce"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-pink-400/30 rounded-full animate-bounce delay-1000"></div>
+      </div>
       {/* Navigation */}
       <nav className="flex items-center justify-between p-6 md:p-8 bg-black/20 backdrop-blur-sm border-b border-white/10">
         <div className="text-xl font-bold text-primary">z4ynu</div>
@@ -152,7 +168,7 @@ const Hero = () => {
                 </div>
               </div>
               {/* Floating elements */}
-              <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-primary/15 border-2 border-primary/30 flex items-center justify-center shadow-lg">
+              <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-primary/15 border-2 border-primary/30 flex items-center justify-center shadow-lg animate-float">
                 <svg
                   className="w-10 h-10 text-primary"
                   fill="none"
@@ -167,7 +183,7 @@ const Hero = () => {
                   />
                 </svg>
               </div>
-              <div className="absolute -bottom-6 -left-6 w-16 h-16 rounded-full bg-accent/15 border-2 border-accent/30 flex items-center justify-center shadow-lg">
+              <div className="absolute -bottom-6 -left-6 w-16 h-16 rounded-full bg-accent/15 border-2 border-accent/30 flex items-center justify-center shadow-lg animate-float-delayed">
                 <svg
                   className="w-8 h-8 text-accent"
                   fill="none"
@@ -182,9 +198,9 @@ const Hero = () => {
                   />
                 </svg>
               </div>
-              <div className="absolute top-1/2 -left-10 w-14 h-14 rounded-full bg-secondary/60 border-2 border-border flex items-center justify-center shadow-lg">
+              <div className="absolute top-1/2 -left-10 w-14 h-14 rounded-full bg-pink-500/20 border-2 border-pink-400/40 flex items-center justify-center shadow-lg animate-float">
                 <svg
-                  className="w-7 h-7 text-foreground"
+                  className="w-7 h-7 text-pink-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -194,6 +210,77 @@ const Hero = () => {
                     strokeLinejoin="round"
                     strokeWidth={2}
                     d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+                  />
+                </svg>
+              </div>
+              
+              {/* Additional hobby elements */}
+              <div className="absolute top-1/4 -right-16 w-12 h-12 rounded-full bg-blue-500/20 border-2 border-blue-400/40 flex items-center justify-center shadow-lg animate-float-delayed">
+                <svg
+                  className="w-6 h-6 text-blue-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 5a2 2 0 012-2h4a2 2 0 012 2v2H8V5z"
+                  />
+                </svg>
+              </div>
+              
+              <div className="absolute bottom-1/4 -left-16 w-10 h-10 rounded-full bg-green-500/20 border-2 border-green-400/40 flex items-center justify-center shadow-lg animate-float">
+                <svg
+                  className="w-5 h-5 text-green-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
+              </div>
+              
+              <div className="absolute top-3/4 -right-8 w-8 h-8 rounded-full bg-purple-500/20 border-2 border-purple-400/40 flex items-center justify-center shadow-lg animate-float-delayed">
+                <svg
+                  className="w-4 h-4 text-purple-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
+                </svg>
+              </div>
+              
+              <div className="absolute top-1/6 -left-8 w-6 h-6 rounded-full bg-yellow-500/20 border-2 border-yellow-400/40 flex items-center justify-center shadow-lg animate-float">
+                <svg
+                  className="w-3 h-3 text-yellow-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
                   />
                 </svg>
               </div>

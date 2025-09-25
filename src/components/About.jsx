@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react"
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [hoveredCard, setHoveredCard] = useState(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -27,14 +28,43 @@ const About = () => {
   }, []);
 
   return (
-    <section 
-      ref={sectionRef}
-      id="about" 
-      className={`py-20 px-6 md:px-8 bg-about transition-all duration-1000 ease-out ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
-    >
-      <div className="max-w-6xl mx-auto">
+    <>
+      {/* Modal Overlay */}
+      {hoveredCard && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <div className="relative max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+            <div className="bg-card border border-border rounded-lg shadow-2xl transform scale-105 transition-all duration-300 ease-out">
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-foreground">
+                    {hoveredCard.title}
+                  </h3>
+                  <button
+                    onClick={() => setHoveredCard(null)}
+                    className="text-muted-foreground hover:text-foreground transition-colors text-2xl"
+                  >
+                    ×
+                  </button>
+                </div>
+                <div className="prose prose-invert max-w-none">
+                  <p className="text-muted-foreground leading-relaxed text-lg">
+                    {hoveredCard.content}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <section 
+        ref={sectionRef}
+        id="about" 
+        className={`py-20 px-6 md:px-8 bg-about transition-all duration-1000 ease-out ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
+        <div className="max-w-6xl mx-auto">
         <div className="space-y-12">
           {/* Header */}
           <div className={`text-center transition-all duration-1000 ease-out ${
@@ -87,9 +117,17 @@ const About = () => {
 
             {/* Right Column */}
             <div className="space-y-8">
-              <Card className={`border-border/50 transition-all duration-500 ease-out ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`} style={{ transitionDelay: '300ms' }}>
+              <Card 
+                className={`border-border/50 transition-all duration-500 ease-out cursor-pointer hover:scale-105 hover:shadow-xl hover:border-primary/50 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`} 
+                style={{ transitionDelay: '300ms' }}
+                onMouseEnter={() => setHoveredCard({
+                  title: "Current Focus",
+                  content: "Right now, I'm focused on improving my web development skills, mastering both frontend and backend technologies. Alongside academics, I still make time for hobbies—whether it's playing instruments, exploring games, or learning new creative outlets that keep me inspired. I'm constantly learning new frameworks and tools to stay current with industry trends, and I enjoy building projects that combine my technical skills with my creative interests."
+                })}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
                 <CardHeader>
                   <CardTitle className="text-xl">Current Focus</CardTitle>
                 </CardHeader>
@@ -100,9 +138,17 @@ const About = () => {
                 </CardContent>
               </Card>
 
-              <Card className={`border-border/50 transition-all duration-500 ease-out ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`} style={{ transitionDelay: '500ms' }}>
+              <Card 
+                className={`border-border/50 transition-all duration-500 ease-out cursor-pointer hover:scale-105 hover:shadow-xl hover:border-primary/50 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`} 
+                style={{ transitionDelay: '500ms' }}
+                onMouseEnter={() => setHoveredCard({
+                  title: "Beyond Code",
+                  content: "Outside academics, I serve as a musician at Tagum Alliance Gospel Church and have joined multiple battle of the bands. I also enjoy competing in Valorant tournaments, hanging out with friends, and spending time with my girlfriend, Kissay. These experiences remind me that growth comes not only from studies but also from the passions and people who shape who I am. Music has taught me discipline and creativity, gaming has improved my strategic thinking and teamwork, and my relationships keep me grounded and motivated to pursue my dreams."
+                })}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
                 <CardHeader>
                   <CardTitle className="text-xl">Beyond Code</CardTitle>
                 </CardHeader>
@@ -117,6 +163,7 @@ const About = () => {
         </div>
       </div>
     </section>
+    </>
   )
 }
 

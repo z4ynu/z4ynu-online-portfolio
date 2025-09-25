@@ -48,7 +48,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left Column */}
             <div className="space-y-8">
-              <div className={`flex items-start space-x-4 transition-all duration-500 ease-out ${
+              <div className={`flex items-start space-x-4 transition-all duration-300 ease-out hover:shadow-lg hover:bg-card/10 hover:rounded-lg hover:p-4 hover:-m-4 hover:scale-105 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`} style={{ transitionDelay: '200ms' }}>
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -60,7 +60,7 @@ const About = () => {
                 </div>
               </div>
 
-              <div className={`flex items-start space-x-4 transition-all duration-500 ease-out ${
+              <div className={`flex items-start space-x-4 transition-all duration-300 ease-out hover:shadow-lg hover:bg-card/10 hover:rounded-lg hover:p-4 hover:-m-4 hover:scale-105 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`} style={{ transitionDelay: '400ms' }}>
                 <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0"></div>
@@ -72,7 +72,7 @@ const About = () => {
                 </div>
               </div>
 
-              <div className={`flex items-start space-x-4 transition-all duration-500 ease-out ${
+              <div className={`flex items-start space-x-4 transition-all duration-300 ease-out hover:shadow-lg hover:bg-card/10 hover:rounded-lg hover:p-4 hover:-m-4 hover:scale-105 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`} style={{ transitionDelay: '600ms' }}>
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>

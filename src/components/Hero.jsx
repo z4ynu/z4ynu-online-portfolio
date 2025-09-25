@@ -102,14 +102,14 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="text-lg px-8 py-4 font-semibold bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                className="text-lg px-8 py-4 font-semibold bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl active:shadow-md active:translate-y-1 transition-all duration-200 w-full sm:w-auto transform hover:scale-105"
               >
                 Get In Touch
               </Button>
               <Button
                 variant="outline"
                 onClick={() => scrollToSection("projects")}
-                className="text-lg px-8 py-4 font-semibold border-2 border-primary/50 hover:border-primary hover:bg-primary/10 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                className="text-lg px-8 py-4 font-semibold border-2 border-primary/50 hover:border-primary hover:bg-primary/10 shadow-lg hover:shadow-xl active:shadow-md active:translate-y-1 transition-all duration-200 w-full sm:w-auto transform hover:scale-105"
               >
                 View My Work
               </Button>

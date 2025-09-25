@@ -18,8 +18,7 @@ const About = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Why Computer Science?</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                    I chose Computer Science because of my long-time love for technology, supported and encouraged by my family. At first, I had to choose between pursuing music or IT, but in the end, my path led me to Computer Science. It became the perfect balance of passion and opportunity.
                   </p>
                 </div>
               </div>
@@ -29,9 +28,7 @@ const About = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-2">My Academic Journey</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                    anim.
+                    I'm currently a 4th-year Computer Science student working on my thesis. The start of college was challenging as I adjusted to new demands, but I've continued to push through and grow. Back in high school, I was a consistent achiever, and that drive still guides me today as I face every challenge with persistence.
                   </p>
                 </div>
               </div>
@@ -41,8 +38,7 @@ const About = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Looking Forward</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae.
+                    I aspire to become a skilled web developer while also exploring other fields such as mobile development, networking, and cybersecurity. My goal is to keep expanding my knowledge and stay adaptable as technology continues to evolve.
                   </p>
                 </div>
               </div>
@@ -57,14 +53,7 @@ const About = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  I'm passionate about crafting accessible, pixel-perfect user interfaces that blend thoughtful design
-                  with robust engineering. My favorite work lies at the intersection of design and development, creating
-                  experiences that not only look great but are meticulously built for performance and usability.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Currently, I'm a Computer Science student specializing in web development, with a growing expertise in
-                  modern frameworks and technologies. I contribute to various projects while building my skills in both
-                  frontend and backend development.
+                  Right now, I'm focused on improving my web development skills, mastering both frontend and backend technologies. Alongside academics, I still make time for hobbies—whether it's playing instruments, exploring games, or learning new creative outlets that keep me inspired.
                 </p>
               </CardContent>
             </Card>
@@ -75,9 +64,7 @@ const About = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
-                  In my spare time, I'm usually reading, exploring new technologies, hanging out with friends, or
-                  sharing my passion for music through tutoring. I believe in the power of continuous learning and enjoy
-                  helping others discover their potential in both technology and music.
+                  Outside academics, I serve as a musician at Tagum Alliance Gospel Church and have joined multiple battle of the bands. I also enjoy competing in Valorant tournaments, hanging out with friends, and spending time with my girlfriend, Kissay. These experiences remind me that growth comes not only from studies but also from the passions and people who shape who I am.
                 </p>
               </CardContent>
             </Card>

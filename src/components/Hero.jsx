@@ -99,22 +99,20 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="border border-primary/20 rounded-lg p-4 bg-card/10 backdrop-blur-sm">
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button
-                  onClick={() => scrollToSection("contact")}
-                  className="text-lg px-8 py-4 font-semibold bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
-                >
-                  Get In Touch
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => scrollToSection("projects")}
-                  className="text-lg px-8 py-4 font-semibold border-2 border-primary/50 hover:border-primary hover:bg-primary/10 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
-                >
-                  View My Work
-                </Button>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button
+                onClick={() => scrollToSection("contact")}
+                className="text-lg px-8 py-4 font-semibold bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+              >
+                Get In Touch
+              </Button>
+              <Button
+                variant="outline"
+                onClick={() => scrollToSection("projects")}
+                className="text-lg px-8 py-4 font-semibold border-2 border-primary/50 hover:border-primary hover:bg-primary/10 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+              >
+                View My Work
+              </Button>
             </div>
 
             {/* Social Links */}

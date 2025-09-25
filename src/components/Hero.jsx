@@ -67,39 +67,8 @@ const Hero = () => {
         <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-yellow-400/30 rounded-full animate-bounce"></div>
         <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-pink-400/30 rounded-full animate-bounce delay-1000"></div>
       </div>
-      {/* Navigation */}
-      <nav className="flex items-center justify-between p-6 md:p-8 bg-black/20 backdrop-blur-sm border-b border-white/10">
-        <div className="text-xl font-bold text-primary">z4ynu</div>
-        <div className="hidden md:flex items-center space-x-8">
-          <button
-            onClick={() => scrollToSection("about")}
-            className="text-white/80 hover:text-primary transition-colors font-medium"
-          >
-            About
-          </button>
-          <button
-            onClick={() => scrollToSection("services")}
-            className="text-white/80 hover:text-primary transition-colors font-medium"
-          >
-            Services
-          </button>
-          <button
-            onClick={() => scrollToSection("projects")}
-            className="text-white/80 hover:text-primary transition-colors font-medium"
-          >
-            Projects
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="text-white/80 hover:text-primary transition-colors font-medium"
-          >
-            Contact
-          </button>
-        </div>
-      </nav>
-
       {/* Hero Content */}
-      <div className="flex-1 flex items-center">
+      <div className="flex-1 flex items-center pt-20">
         <div className="max-w-6xl mx-auto px-6 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column */}
           <div

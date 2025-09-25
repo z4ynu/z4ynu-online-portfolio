@@ -37,7 +37,7 @@ const Footer = () => {
     },
     {
       name: "Email",
-      href: "mailto:contact@z4ynu.dev",
+      href: "mailto:zyhenzonunez@gmail.com",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path

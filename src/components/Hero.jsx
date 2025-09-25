@@ -120,7 +120,7 @@ const Hero = () => {
               <div className="flex items-center justify-center space-x-4">
                 {/* GitHub */}
                 <a
-                  href="https://github.com"
+                  href="https://github.com/z4ynu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
@@ -137,7 +137,7 @@ const Hero = () => {
                 
                 {/* LinkedIn */}
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/zy-nuñez"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
@@ -170,7 +170,7 @@ const Hero = () => {
                 
                 {/* TikTok */}
                 <a
-                  href="https://tiktok.com"
+                  href="https://www.tiktok.com/@z4ynu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
@@ -187,7 +187,7 @@ const Hero = () => {
                 
                 {/* Facebook */}
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/zynuuu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
@@ -204,7 +204,7 @@ const Hero = () => {
                 
                 {/* YouTube */}
                 <a
-                  href="https://youtube.com"
+                  href="https://www.youtube.com/@z4ynu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
@@ -221,7 +221,7 @@ const Hero = () => {
                 
                   {/* Steam */}
                   <a
-                    href="https://steamcommunity.com"
+                    href="https://steamcommunity.com/profiles/76561198994198499"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -239,7 +239,7 @@ const Hero = () => {
                 
                 {/* Instagram */}
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/z4ynu_"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"

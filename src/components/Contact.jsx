@@ -37,8 +37,8 @@ const Contact = () => {
   const contactInfo = [
     {
       title: "Email",
-      value: "contact@z4ynu.dev",
-      href: "mailto:contact@z4ynu.dev",
+      value: "zyhenzonunez@gmail.com",
+      href: "mailto:zyhenzonunez@gmail.com",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path

@@ -30,7 +30,7 @@ const About = () => {
     <section 
       ref={sectionRef}
       id="about" 
-      className={`py-20 px-6 md:px-8 bg-about relative overflow-hidden transition-all duration-1000 ease-out ${
+      className={`py-20 px-6 md:px-8 bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-500/10 relative overflow-hidden transition-all duration-1000 ease-out ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >

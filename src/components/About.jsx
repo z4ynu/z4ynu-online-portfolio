@@ -36,44 +36,44 @@ const About = () => {
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Floating circles - distributed across the section */}
-        <div className="absolute top-16 left-16 w-4 h-4 bg-primary/20 rounded-full animate-pulse"></div>
-        <div className="absolute top-32 right-24 w-6 h-6 bg-accent/20 rounded-full animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-8 w-3 h-3 bg-blue-400/20 rounded-full animate-pulse delay-2000"></div>
-        <div className="absolute top-2/3 right-16 w-5 h-5 bg-green-400/20 rounded-full animate-pulse delay-500"></div>
-        <div className="absolute bottom-32 left-32 w-4 h-4 bg-purple-400/20 rounded-full animate-pulse delay-1500"></div>
-        <div className="absolute bottom-16 right-8 w-3 h-3 bg-pink-400/20 rounded-full animate-pulse delay-3000"></div>
+        {/* Floating circles - positioned on the sides of the cards */}
+        <div className="absolute top-1/4 left-8 w-4 h-4 bg-primary/20 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/3 right-8 w-6 h-6 bg-accent/20 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-12 w-3 h-3 bg-blue-400/20 rounded-full animate-pulse delay-2000"></div>
+        <div className="absolute top-2/3 right-12 w-5 h-5 bg-green-400/20 rounded-full animate-pulse delay-500"></div>
+        <div className="absolute bottom-1/3 left-6 w-4 h-4 bg-purple-400/20 rounded-full animate-pulse delay-1500"></div>
+        <div className="absolute bottom-1/4 right-6 w-3 h-3 bg-pink-400/20 rounded-full animate-pulse delay-3000"></div>
 
-        {/* Gradient orbs - spread out more */}
-        <div className="absolute top-1/5 left-1/5 w-32 h-32 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-xl animate-float"></div>
-        <div className="absolute top-1/2 right-1/5 w-24 h-24 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-xl animate-float-delayed"></div>
-        <div className="absolute bottom-1/5 left-1/2 w-28 h-28 bg-gradient-to-r from-green-400/10 to-yellow-400/10 rounded-full blur-xl animate-float"></div>
+        {/* Gradient orbs - positioned on the sides */}
+        <div className="absolute top-1/3 left-4 w-32 h-32 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-xl animate-float"></div>
+        <div className="absolute top-1/2 right-4 w-24 h-24 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-xl animate-float-delayed"></div>
+        <div className="absolute bottom-1/3 left-8 w-28 h-28 bg-gradient-to-r from-green-400/10 to-yellow-400/10 rounded-full blur-xl animate-float"></div>
 
-        {/* Academic-themed decorative elements - better distribution */}
-        <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-yellow-400/30 rounded-full animate-bounce"></div>
-        <div className="absolute top-3/4 left-1/4 w-3 h-3 bg-pink-400/30 rounded-full animate-bounce delay-1000"></div>
-        <div className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-orange-400/30 rounded-full animate-bounce delay-2000"></div>
+        {/* Academic-themed decorative elements - on the sides */}
+        <div className="absolute top-1/4 right-16 w-2 h-2 bg-yellow-400/30 rounded-full animate-bounce"></div>
+        <div className="absolute top-2/3 left-16 w-3 h-3 bg-pink-400/30 rounded-full animate-bounce delay-1000"></div>
+        <div className="absolute bottom-1/3 right-20 w-2 h-2 bg-orange-400/30 rounded-full animate-bounce delay-2000"></div>
         
-        {/* Additional floating elements - spread across the section */}
-        <div className="absolute top-1/6 left-1/8 w-16 h-16 rounded-full bg-primary/15 border-2 border-primary/30 flex items-center justify-center shadow-xl animate-float hover:scale-110 transition-transform duration-300">
+        {/* Additional floating elements - positioned on the sides of cards */}
+        <div className="absolute top-1/4 left-4 w-16 h-16 rounded-full bg-primary/15 border-2 border-primary/30 flex items-center justify-center shadow-xl animate-float hover:scale-110 transition-transform duration-300">
           <svg className="w-8 h-8 text-primary animate-spin-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
           </svg>
         </div>
         
-        <div className="absolute top-1/2 right-1/8 w-14 h-14 rounded-full bg-accent/15 border-2 border-accent/30 flex items-center justify-center shadow-xl animate-float-delayed hover:scale-110 transition-transform duration-300">
+        <div className="absolute top-1/2 right-4 w-14 h-14 rounded-full bg-accent/15 border-2 border-accent/30 flex items-center justify-center shadow-xl animate-float-delayed hover:scale-110 transition-transform duration-300">
           <svg className="w-7 h-7 text-accent animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
           </svg>
         </div>
 
-        <div className="absolute bottom-1/6 left-1/6 w-12 h-12 rounded-full bg-green-500/15 border-2 border-green-400/30 flex items-center justify-center shadow-xl animate-float hover:scale-110 transition-transform duration-300">
+        <div className="absolute bottom-1/3 left-8 w-12 h-12 rounded-full bg-green-500/15 border-2 border-green-400/30 flex items-center justify-center shadow-xl animate-float hover:scale-110 transition-transform duration-300">
           <svg className="w-6 h-6 text-green-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
 
-        <div className="absolute top-3/4 right-1/6 w-10 h-10 rounded-full bg-purple-500/15 border-2 border-purple-400/30 flex items-center justify-center shadow-xl animate-float-delayed hover:scale-110 transition-transform duration-300">
+        <div className="absolute top-2/3 right-8 w-10 h-10 rounded-full bg-purple-500/15 border-2 border-purple-400/30 flex items-center justify-center shadow-xl animate-float-delayed hover:scale-110 transition-transform duration-300">
           <svg className="w-5 h-5 text-purple-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>

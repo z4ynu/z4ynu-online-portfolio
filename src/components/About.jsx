@@ -75,7 +75,7 @@ const About = () => {
               <div className={`flex items-start space-x-4 transition-all duration-500 ease-out ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`} style={{ transitionDelay: '600ms' }}>
-                <div className="w-2 h-2 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Looking Forward</h3>
                   <p className="text-muted-foreground leading-relaxed">
@@ -87,7 +87,7 @@ const About = () => {
 
             {/* Right Column */}
             <div className="space-y-8">
-              <Card className={`border-border/50 transition-all duration-500 ease-out ${
+              <Card className={`border-border/50 transition-all duration-300 ease-out hover:shadow-lg hover:border-primary/50 hover:bg-card/5 hover:scale-105 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`} style={{ transitionDelay: '300ms' }}>
                 <CardHeader>
@@ -100,7 +100,7 @@ const About = () => {
                 </CardContent>
               </Card>
 
-              <Card className={`border-border/50 transition-all duration-500 ease-out ${
+              <Card className={`border-border/50 transition-all duration-300 ease-out hover:shadow-lg hover:border-primary/50 hover:bg-card/5 hover:scale-105 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`} style={{ transitionDelay: '500ms' }}>
                 <CardHeader>

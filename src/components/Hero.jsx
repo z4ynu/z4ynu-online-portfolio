@@ -2,8 +2,20 @@
 
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Trigger fade-in animation after component mounts
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -12,7 +24,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col bg-hero relative overflow-hidden">
+    <section className={`min-h-screen flex flex-col bg-hero relative overflow-hidden transition-all duration-1000 ease-out ${
+      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+    }`}>
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Floating circles */}
@@ -64,7 +78,9 @@ const Hero = () => {
       <div className="flex-1 flex items-center">
         <div className="max-w-6xl mx-auto px-6 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column */}
-          <div className="space-y-8">
+          <div className={`space-y-8 transition-all duration-1000 ease-out delay-200 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             <div className="space-y-4">
               <div className="text-center">
                 <h1 className="text-3xl md:text-5xl font-black border-b-2 border-primary/30 pb-2">
@@ -258,7 +274,9 @@ const Hero = () => {
           </div>
 
           {/* Right Column */}
-          <div className="hidden lg:flex items-center justify-center">
+          <div className={`hidden lg:flex items-center justify-center transition-all duration-1000 ease-out delay-400 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             <div className="relative">
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                 <div className="w-64 h-64 rounded-full bg-card border border-border flex items-center justify-center">
@@ -394,7 +412,9 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="flex justify-center pb-8">
+      <div className={`flex justify-center pb-8 transition-all duration-1000 ease-out delay-600 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>
         <button
           onClick={() => scrollToSection("about")}
           className="animate-bounce text-muted-foreground hover:text-primary transition-colors"

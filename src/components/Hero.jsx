@@ -66,8 +66,8 @@ const Hero = () => {
           {/* Left Column */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <div className="border-2 border-primary/30 rounded-lg p-6 bg-card/50 backdrop-blur-sm text-center">
-                <h1 className="text-4xl md:text-6xl font-black whitespace-nowrap">
+              <div className="border-2 border-primary/30 rounded-lg p-6 bg-card/50 backdrop-blur-sm text-center overflow-hidden">
+                <h1 className="text-3xl md:text-5xl font-black">
                   Zy Henzo S. Nuñez
                 </h1>
               </div>

@@ -1,8 +1,39 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
+import { useState, useEffect, useRef } from "react"
 
 const About = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section id="about" className="py-20 px-6 md:px-8 bg-about">
+    <section 
+      ref={sectionRef}
+      id="about" 
+      className={`py-20 px-6 md:px-8 bg-about transition-all duration-1000 ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="space-y-12">
           {/* Header */}

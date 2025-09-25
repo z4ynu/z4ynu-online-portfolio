@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     // Trigger fade-in animation after component mounts
@@ -19,7 +20,28 @@ const Hero = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      setIsScrolling(true);
+      
+      // Add fade transition effect
+      element.style.opacity = '0';
+      element.style.transition = 'opacity 0.8s ease-out';
+      
+      // Smooth scroll to section
+      element.scrollIntoView({ 
+        behavior: "smooth",
+        block: "start"
+      });
+      
+      // Animate the section in after scroll starts
+      setTimeout(() => {
+        element.style.opacity = '1';
+      }, 300);
+      
+      // Reset transition and scrolling state after animation completes
+      setTimeout(() => {
+        element.style.transition = '';
+        setIsScrolling(false);
+      }, 1100);
     }
   };
 
@@ -278,9 +300,9 @@ const Hero = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <div className="relative">
-              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <div className="w-64 h-64 rounded-full bg-card border border-border flex items-center justify-center">
-                  <div className="w-64 h-64 rounded-full bg-card border border-border flex items-center justify-center overflow-hidden">
+              <div className="w-96 h-96 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                <div className="w-80 h-80 rounded-full bg-card border border-border flex items-center justify-center">
+                  <div className="w-80 h-80 rounded-full bg-card border border-border flex items-center justify-center overflow-hidden">
                     <img
                       src="/images/zaynu.jpg"
                       alt="Zy Henzo S. Nuñez"
@@ -290,9 +312,9 @@ const Hero = () => {
                 </div>
               </div>
               {/* Floating elements */}
-              <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-primary/15 border-2 border-primary/30 flex items-center justify-center shadow-lg animate-float">
+              <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center shadow-xl animate-float hover:scale-110 transition-transform duration-300">
                 <svg
-                  className="w-10 h-10 text-primary"
+                  className="w-12 h-12 text-primary animate-spin-slow"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -305,9 +327,9 @@ const Hero = () => {
                   />
                 </svg>
               </div>
-              <div className="absolute -bottom-6 -left-6 w-16 h-16 rounded-full bg-accent/15 border-2 border-accent/30 flex items-center justify-center shadow-lg animate-float-delayed">
+              <div className="absolute -bottom-8 -left-8 w-20 h-20 rounded-full bg-accent/20 border-2 border-accent/40 flex items-center justify-center shadow-xl animate-float-delayed hover:scale-110 transition-transform duration-300">
                 <svg
-                  className="w-8 h-8 text-accent"
+                  className="w-10 h-10 text-accent animate-pulse"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -320,9 +342,9 @@ const Hero = () => {
                   />
                 </svg>
               </div>
-              <div className="absolute top-1/2 -left-10 w-14 h-14 rounded-full bg-pink-500/20 border-2 border-pink-400/40 flex items-center justify-center shadow-lg animate-float">
+              <div className="absolute top-1/2 -left-12 w-18 h-18 rounded-full bg-pink-500/25 border-2 border-pink-400/50 flex items-center justify-center shadow-xl animate-float hover:scale-110 transition-transform duration-300">
                 <svg
-                  className="w-7 h-7 text-pink-400"
+                  className="w-9 h-9 text-pink-400 animate-bounce"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -337,9 +359,9 @@ const Hero = () => {
               </div>
               
               {/* Additional hobby elements */}
-              <div className="absolute top-1/4 -right-16 w-12 h-12 rounded-full bg-blue-500/20 border-2 border-blue-400/40 flex items-center justify-center shadow-lg animate-float-delayed">
+              <div className="absolute top-1/4 -right-20 w-16 h-16 rounded-full bg-blue-500/25 border-2 border-blue-400/50 flex items-center justify-center shadow-xl animate-float-delayed hover:scale-110 transition-transform duration-300">
                 <svg
-                  className="w-6 h-6 text-blue-400"
+                  className="w-8 h-8 text-blue-400 animate-pulse"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -359,9 +381,9 @@ const Hero = () => {
                 </svg>
               </div>
               
-              <div className="absolute bottom-1/4 -left-16 w-10 h-10 rounded-full bg-green-500/20 border-2 border-green-400/40 flex items-center justify-center shadow-lg animate-float">
+              <div className="absolute bottom-1/4 -left-20 w-14 h-14 rounded-full bg-green-500/25 border-2 border-green-400/50 flex items-center justify-center shadow-xl animate-float hover:scale-110 transition-transform duration-300">
                 <svg
-                  className="w-5 h-5 text-green-400"
+                  className="w-7 h-7 text-green-400 animate-bounce"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -375,9 +397,9 @@ const Hero = () => {
                 </svg>
               </div>
               
-              <div className="absolute top-3/4 -right-8 w-8 h-8 rounded-full bg-purple-500/20 border-2 border-purple-400/40 flex items-center justify-center shadow-lg animate-float-delayed">
+              <div className="absolute top-3/4 -right-12 w-12 h-12 rounded-full bg-purple-500/25 border-2 border-purple-400/50 flex items-center justify-center shadow-xl animate-float-delayed hover:scale-110 transition-transform duration-300">
                 <svg
-                  className="w-4 h-4 text-purple-400"
+                  className="w-6 h-6 text-purple-400 animate-spin-slow"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -391,9 +413,9 @@ const Hero = () => {
                 </svg>
               </div>
               
-              <div className="absolute top-1/6 -left-8 w-6 h-6 rounded-full bg-yellow-500/20 border-2 border-yellow-400/40 flex items-center justify-center shadow-lg animate-float">
+              <div className="absolute top-1/6 -left-12 w-10 h-10 rounded-full bg-yellow-500/25 border-2 border-yellow-400/50 flex items-center justify-center shadow-xl animate-float hover:scale-110 transition-transform duration-300">
                 <svg
-                  className="w-3 h-3 text-yellow-400"
+                  className="w-5 h-5 text-yellow-400 animate-pulse"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

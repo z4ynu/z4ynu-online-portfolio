@@ -137,6 +137,42 @@
       transform: translateY(-15px) rotate(-1deg);
     }
   }
+  
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+  }
+  
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animate-audio-bar {
+    animation: audio-bar 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes audio-bar {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scaleY(0.5);
+    }
+    25% {
+      opacity: 0.8;
+      transform: scaleY(1.2);
+    }
+    50% {
+      opacity: 1;
+      transform: scaleY(1.8);
+    }
+    75% {
+      opacity: 0.6;
+      transform: scaleY(1.1);
+    }
+  }
 }
 
 /* Added focus styles for better accessibility */

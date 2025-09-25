@@ -4,15 +4,17 @@ const About = () => {
   return (
     <section id="about" className="py-20 px-6 md:px-8 bg-about">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Left Column - Navigation */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <div className="text-sm text-muted-foreground uppercase tracking-wider">About</div>
-              <h2 className="text-3xl md:text-4xl font-bold text-balance">My Journey in Computer Science</h2>
-            </div>
+        <div className="space-y-12">
+          {/* Header */}
+          <div className="text-center">
+            <div className="text-sm text-muted-foreground uppercase tracking-wider">About</div>
+            <h2 className="text-3xl md:text-4xl font-bold text-balance mt-2">My Journey in Computer Science</h2>
+          </div>
 
-            <div className="space-y-6">
+          {/* Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left Column */}
+            <div className="space-y-8">
               <div className="flex items-start space-x-4">
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
                 <div>
@@ -43,31 +45,31 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Right Column - Main Content */}
-          <div className="space-y-6">
-            <Card className="border-border/50">
-              <CardHeader>
-                <CardTitle className="text-xl">Current Focus</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  Right now, I'm focused on improving my web development skills, mastering both frontend and backend technologies. Alongside academics, I still make time for hobbies—whether it's playing instruments, exploring games, or learning new creative outlets that keep me inspired.
-                </p>
-              </CardContent>
-            </Card>
+            {/* Right Column */}
+            <div className="space-y-8">
+              <Card className="border-border/50">
+                <CardHeader>
+                  <CardTitle className="text-xl">Current Focus</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Right now, I'm focused on improving my web development skills, mastering both frontend and backend technologies. Alongside academics, I still make time for hobbies—whether it's playing instruments, exploring games, or learning new creative outlets that keep me inspired.
+                  </p>
+                </CardContent>
+              </Card>
 
-            <Card className="border-border/50">
-              <CardHeader>
-                <CardTitle className="text-xl">Beyond Code</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  Outside academics, I serve as a musician at Tagum Alliance Gospel Church and have joined multiple battle of the bands. I also enjoy competing in Valorant tournaments, hanging out with friends, and spending time with my girlfriend, Kissay. These experiences remind me that growth comes not only from studies but also from the passions and people who shape who I am.
-                </p>
-              </CardContent>
-            </Card>
+              <Card className="border-border/50">
+                <CardHeader>
+                  <CardTitle className="text-xl">Beyond Code</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Outside academics, I serve as a musician at Tagum Alliance Gospel Church and have joined multiple battle of the bands. I also enjoy competing in Valorant tournaments, hanging out with friends, and spending time with my girlfriend, Kissay. These experiences remind me that growth comes not only from studies but also from the passions and people who shape who I am.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>

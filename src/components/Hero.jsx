@@ -67,7 +67,7 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <div className="border-2 border-primary/30 rounded-lg p-6 bg-card/50 backdrop-blur-sm text-center">
-                <h1 className="text-4xl md:text-6xl font-bold text-balance">
+                <h1 className="text-4xl md:text-6xl font-black whitespace-nowrap">
                   Zy Henzo S. Nuñez
                 </h1>
               </div>

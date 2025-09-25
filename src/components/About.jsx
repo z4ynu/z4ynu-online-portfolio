@@ -37,7 +37,9 @@ const About = () => {
       <div className="max-w-6xl mx-auto">
         <div className="space-y-12">
           {/* Header */}
-          <div className="text-center">
+          <div className={`text-center transition-all duration-1000 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             <div className="text-sm text-muted-foreground uppercase tracking-wider">About</div>
             <h2 className="text-3xl md:text-4xl font-bold text-balance mt-2">My Journey in Computer Science</h2>
           </div>
@@ -46,7 +48,9 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left Column */}
             <div className="space-y-8">
-              <div className="flex items-start space-x-4">
+              <div className={`flex items-start space-x-4 transition-all duration-500 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`} style={{ transitionDelay: '200ms' }}>
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Why Computer Science?</h3>
@@ -56,7 +60,9 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
+              <div className={`flex items-start space-x-4 transition-all duration-500 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`} style={{ transitionDelay: '400ms' }}>
                 <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0"></div>
                 <div>
                   <h3 className="font-semibold text-lg mb-2">My Academic Journey</h3>
@@ -66,7 +72,9 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
+              <div className={`flex items-start space-x-4 transition-all duration-500 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`} style={{ transitionDelay: '600ms' }}>
                 <div className="w-2 h-2 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Looking Forward</h3>
@@ -79,7 +87,9 @@ const About = () => {
 
             {/* Right Column */}
             <div className="space-y-8">
-              <Card className="border-border/50">
+              <Card className={`border-border/50 transition-all duration-500 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`} style={{ transitionDelay: '300ms' }}>
                 <CardHeader>
                   <CardTitle className="text-xl">Current Focus</CardTitle>
                 </CardHeader>
@@ -90,7 +100,9 @@ const About = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-border/50">
+              <Card className={`border-border/50 transition-all duration-500 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`} style={{ transitionDelay: '500ms' }}>
                 <CardHeader>
                   <CardTitle className="text-xl">Beyond Code</CardTitle>
                 </CardHeader>

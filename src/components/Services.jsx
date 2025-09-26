@@ -53,12 +53,12 @@ const Services = () => {
     },
     {
       title: "Freelance Writing",
-      description: "I create clear, professional, and engaging content tailored to diverse industries. My writing combines simplicity with impact, making complex topics easy to understand.",
+      description: "Creating clear, professional content that makes complex topics accessible across diverse industries",
       features: [
-        "Article and blog writing (tech, cybersecurity, speech therapy, AI, etc.)",
-        "Rewriting and paraphrasing for originality and clarity",
-        "Professional tone adjustments for different audiences",
-        "Structured content with creative subheadings",
+        "Article and blog writing (tech, cybersecurity, AI, etc.)",
+        "Rewriting and paraphrasing for clarity",
+        "Professional tone adjustments",
+        "Structured content with subheadings",
         "Social media content optimization",
       ],
       technologies: ["Cybersecurity", "Technology", "Speech Therapy", "AI & Automation", "Professional Rewriting"],
@@ -117,7 +117,7 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors group">
+            <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors group h-full flex flex-col">
               <CardHeader className="space-y-4">
                 <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
                   {service.icon}
@@ -128,7 +128,7 @@ const Services = () => {
                 </div>
               </CardHeader>
 
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-6 flex-grow flex flex-col">
                 <div>
                   <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider">Key Services</h4>
                   <ul className="space-y-2">
@@ -141,7 +141,7 @@ const Services = () => {
                   </ul>
                 </div>
 
-                <div>
+                <div className="flex-grow">
                   <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider">
                     {service.title === "Freelance Writing" ? "Writing Focus" : 
                      service.title === "Music Tutoring" ? "Instruments & Skills" : "Technologies"}

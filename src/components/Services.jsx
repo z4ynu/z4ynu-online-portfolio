@@ -112,7 +112,9 @@ const Services = () => {
                 </div>
 
                 <div>
-                  <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider">Technologies</h4>
+                  <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider">
+                    {service.title === "Freelance Writing" ? "Writing Focus" : "Technologies"}
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {service.technologies.map((tech, techIndex) => (
                       <span

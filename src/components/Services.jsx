@@ -9,13 +9,13 @@ const Services = () => {
       title: "Web Development",
       description: "Building modern, responsive web applications with cutting-edge technologies",
       features: [
-        "React & Next.js Applications",
+        "React + Vite Applications",
         "Responsive Design & Mobile-First",
         "Performance Optimization",
         "API Integration & Backend Services",
         "Database Design & Management",
       ],
-      technologies: ["React", "Next.js", "TypeScript", "TailwindCSS", "Node.js", "Firebase"],
+      technologies: ["React", "Vite", "JavaScript", "TailwindCSS", "Node.js", "Firebase", "Supabase", "SQLyog", "MySQL"],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -29,15 +29,15 @@ const Services = () => {
     },
     {
       title: "Freelance Writing",
-      description: "Crafting compelling content that engages audiences and drives results",
+      description: "I create clear, professional, and engaging content tailored to diverse industries. My writing combines simplicity with impact, making complex topics easy to understand.",
       features: [
-        "Technical Documentation",
-        "Blog Posts & Articles",
-        "Content Strategy",
-        "SEO-Optimized Writing",
-        "Copy for Web & Marketing",
+        "Article and blog writing (tech, cybersecurity, speech therapy, AI, etc.)",
+        "Rewriting and paraphrasing for originality and clarity",
+        "Professional tone adjustments for different audiences",
+        "Structured content with creative subheadings",
+        "Social media content optimization",
       ],
-      technologies: ["Research", "SEO", "Content Strategy", "Technical Writing", "Copywriting"],
+      technologies: ["Cybersecurity", "Technology", "Speech Therapy", "AI & Automation", "Professional Rewriting"],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path

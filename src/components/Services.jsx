@@ -59,7 +59,7 @@ const Services = () => {
         "Performance Coaching",
         "Flexible Learning Approaches",
       ],
-      technologies: ["Piano", "Guitar", "Music Theory", "Composition", "Performance"],
+      technologies: ["Drums", "Bass", "Guitar", "Gospel Chops", "Shredding", "Music Theory", "Performance"],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -113,7 +113,8 @@ const Services = () => {
 
                 <div>
                   <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider">
-                    {service.title === "Freelance Writing" ? "Writing Focus" : "Technologies"}
+                    {service.title === "Freelance Writing" ? "Writing Focus" : 
+                     service.title === "Music Tutoring" ? "Instruments & Skills" : "Technologies"}
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {service.technologies.map((tech, techIndex) => (

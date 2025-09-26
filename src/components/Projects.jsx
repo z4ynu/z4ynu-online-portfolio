@@ -137,7 +137,15 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="border-border/50 hover:border-primary/50 transition-all duration-300 group overflow-hidden"
+              className={`border-border/50 hover:border-primary/50 transition-all duration-300 group overflow-hidden ${
+                isVisible 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{ 
+                transitionDelay: isVisible ? `${index * 150}ms` : '0ms',
+                transitionDuration: '800ms'
+              }}
             >
               <div className="relative overflow-hidden">
                 <img

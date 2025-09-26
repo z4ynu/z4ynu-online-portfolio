@@ -7,10 +7,10 @@ import { Badge } from "./ui/badge"
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with modern UI/UX, payment integration, and admin dashboard.",
-      image: "/images/modern-ecommerce-interface.png",
-      technologies: ["React", "Next.js", "TailwindCSS", "Firebase", "Stripe"],
+      title: "FishPet - Pet Care App",
+      description: "A comprehensive pet care application for managing fish and aquatic pets with feeding schedules and health tracking.",
+      image: "/projects/fishpet.png",
+      technologies: ["React", "Node.js", "MongoDB", "Express"],
       category: "Web Development",
       status: "Completed",
       links: {
@@ -19,48 +19,35 @@ const Projects = () => {
       },
     },
     {
-      title: "Task Management App",
-      description:
-        "A collaborative task management application with real-time updates and team collaboration features.",
-      image: "/projects/task-management-dashboard.png",
-      technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
-      category: "Web Development",
-      status: "In Progress",
-      links: {
-        demo: "#",
-        github: "#",
-      },
-    },
-    {
-      title: "Weather Forecast App",
-      description: "A responsive weather application with location-based forecasts and interactive maps.",
-      image: "/projects/weather-app-interface-with-maps.jpg",
-      technologies: ["React", "TypeScript", "OpenWeather API", "Mapbox"],
-      category: "Web Development",
-      status: "Completed",
-      links: {
-        demo: "#",
-        github: "#",
-      },
-    },
-    {
-      title: "Portfolio Website",
-      description: "A personal portfolio website showcasing projects and skills with modern design principles.",
-      image: "/images/portfolio-website-design.png",
-      technologies: ["Next.js", "TailwindCSS", "Framer Motion"],
-      category: "Web Development",
-      status: "Completed",
-      links: {
-        demo: "#",
-        github: "#",
-      },
-    },
-    {
-      title: "Music Learning Platform",
-      description: "An educational platform for music theory and instrument learning with interactive lessons.",
-      image: "/projects/music-learning-app-interface.jpg",
-      technologies: ["React", "Firebase", "Web Audio API"],
+      title: "ELMS - Learning Management System",
+      description: "An educational platform for course management, student tracking, and interactive learning experiences.",
+      image: "/projects/elms.png",
+      technologies: ["React", "Firebase", "TailwindCSS", "Node.js"],
       category: "Education",
+      status: "Completed",
+      links: {
+        demo: "#",
+        github: "#",
+      },
+    },
+    {
+      title: "Hotelliere - Hotel Management",
+      description: "A complete hotel management system with booking, room management, and guest services functionality.",
+      image: "/projects/hotelliere.png",
+      technologies: ["React", "MySQL", "PHP", "Bootstrap"],
+      category: "Web Development",
+      status: "Completed",
+      links: {
+        demo: "#",
+        github: "#",
+      },
+    },
+    {
+      title: "WashingAlley - Laundry Service",
+      description: "A modern laundry service platform with pickup/delivery scheduling and payment integration.",
+      image: "/projects/washingalley.png",
+      technologies: ["React", "Firebase", "Stripe", "TailwindCSS"],
+      category: "Web Development",
       status: "In Progress",
       links: {
         demo: "#",
@@ -68,11 +55,23 @@ const Projects = () => {
       },
     },
     {
-      title: "Blog CMS",
-      description: "A content management system for bloggers with markdown support and SEO optimization.",
-      image: "/projects/blog-cms-dashboard-interface.jpg",
-      technologies: ["Next.js", "MDX", "PostgreSQL", "Prisma"],
+      title: "AutoHub - Car Dealership",
+      description: "A comprehensive car dealership website with vehicle listings, financing options, and customer management.",
+      image: "/projects/autohublandingpage.png",
+      technologies: ["React", "Next.js", "PostgreSQL", "Prisma"],
       category: "Web Development",
+      status: "Completed",
+      links: {
+        demo: "#",
+        github: "#",
+      },
+    },
+    {
+      title: "Arduino IoT Project",
+      description: "An Internet of Things project using Arduino for smart home automation and sensor monitoring.",
+      image: "/projects/arduino.jpeg",
+      technologies: ["Arduino", "C++", "IoT", "Sensors"],
+      category: "Hardware",
       status: "Completed",
       links: {
         demo: "#",

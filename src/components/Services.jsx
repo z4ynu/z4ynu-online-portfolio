@@ -2,8 +2,32 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "./ui/card"
 import { Button } from "./ui/button"
+import { useState, useEffect, useRef } from "react"
 
 const Services = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
   const services = [
     {
       title: "Web Development",
@@ -74,7 +98,13 @@ const Services = () => {
   ]
 
   return (
-    <section id="services" className="py-20 px-6 md:px-8 bg-techstack">
+    <section 
+      ref={sectionRef}
+      id="services" 
+      className={`py-20 px-6 md:px-8 bg-techstack transition-all duration-1000 ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="text-sm text-muted-foreground uppercase tracking-wider mb-4">Services</div>

@@ -39,7 +39,7 @@ const Services = () => {
         "API Integration & Backend Services",
         "Database Design & Management",
       ],
-      technologies: ["React", "Vite", "JavaScript", "TailwindCSS", "Node.js", "Firebase", "Supabase", "SQLyog", "MySQL"],
+      technologies: ["React", "Vite", "JavaScript", "HTML5", "CSS", "TailwindCSS", "Node.js", "Firebase", "Supabase", "SQLyog", "MySQL"],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -117,7 +117,7 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors group h-full flex flex-col">
+            <Card key={index} className="border-border/50 hover:border-primary/50 transition-all duration-300 ease-out hover:shadow-lg hover:bg-card/10 hover:scale-105 group h-full flex flex-col">
               <CardHeader className="space-y-4">
                 <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
                   {service.icon}

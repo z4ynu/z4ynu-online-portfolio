@@ -1,6 +1,30 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
+import { useState, useEffect, useRef } from "react"
 
 const Hobbies = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
   const hobbies = [
     {
       title: "Music",
@@ -75,9 +99,20 @@ const Hobbies = () => {
   ]
 
   return (
-    <section id="hobbies" className="py-20 px-6 md:px-8 bg-techstack">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+    <section
+      ref={sectionRef}
+      id="hobbies" 
+      className={`py-20 px-6 md:px-8 bg-techstack relative overflow-hidden transition-all duration-1000 ease-out ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className={`text-center mb-16 transition-all duration-1000 ease-out ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+        style={{
+          transitionDelay: isVisible ? "100ms" : "0ms",
+        }}>
           <div className="text-sm text-muted-foreground uppercase tracking-wider mb-4">Hobbies</div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">Beyond the Code</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -89,7 +124,13 @@ const Hobbies = () => {
           {hobbies.map((hobby, index) => (
             <Card
               key={index}
-              className={`border-border/50 hover:border-primary/50 transition-all duration-300 group relative overflow-hidden w-96 flex-shrink-0 lg:flex-shrink`}
+              className={`border-border/50 hover:border-primary/50 transition-all duration-300 group relative overflow-hidden w-96 flex-shrink-0 lg:flex-shrink ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{
+                transitionDelay: isVisible ? `${200 + index * 150}ms` : "0ms",
+                transitionDuration: "800ms",
+              }}
             >
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${hobby.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
@@ -110,8 +151,13 @@ const Hobbies = () => {
         </div>
 
         {/* Personal Quote */}
-        <div className="mt-16 text-center">
-          <Card className="border-border/50 bg-card/50 max-w-3xl mx-auto">
+        <div className={`mt-16 text-center transition-all duration-1000 ease-out ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+        style={{
+          transitionDelay: isVisible ? "950ms" : "0ms",
+        }}>
+          <Card className="border-border/50 bg-card/50 max-w-3xl mx-auto hover:border-primary/50 transition-all duration-300">
             <CardContent className="pt-8 pb-8">
               <blockquote className="text-xl md:text-2xl font-medium text-balance leading-relaxed mb-4">
                 "Repetition is key. Every expert was once a beginner who never stopped practicing."

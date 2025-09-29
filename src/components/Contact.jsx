@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
@@ -9,6 +9,8 @@ import emailjs from '@emailjs/browser'
 import { toast } from 'sonner'
 
 const Contact = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,6 +18,27 @@ const Contact = () => {
     message: ""
   })
   const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -109,7 +132,13 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="py-20 px-6 md:px-8 bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-500/10 relative overflow-hidden">
+    <section
+      ref={sectionRef}
+      id="contact" 
+      className={`py-20 px-6 md:px-8 bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-500/10 relative overflow-hidden transition-all duration-1000 ease-out ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Floating circles */}
@@ -157,7 +186,12 @@ const Contact = () => {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-1000 ease-out ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+        style={{
+          transitionDelay: isVisible ? "100ms" : "0ms",
+        }}>
           <div className="text-sm text-muted-foreground uppercase tracking-wider mb-4">Contact</div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">Let's Work Together</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -168,7 +202,13 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="border-border/50">
+          <Card className={`border-border/50 transition-all duration-1000 ease-out ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+          style={{
+            transitionDelay: isVisible ? "200ms" : "0ms",
+            transitionDuration: "800ms",
+          }}>
             <CardHeader>
               <CardTitle className="text-xl">Send me a message</CardTitle>
             </CardHeader>
@@ -253,7 +293,13 @@ const Contact = () => {
           </Card>
 
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className={`space-y-8 transition-all duration-1000 ease-out ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+          style={{
+            transitionDelay: isVisible ? "350ms" : "0ms",
+            transitionDuration: "800ms",
+          }}>
             <Card className="border-border/50">
               <CardHeader>
                 <CardTitle className="text-xl">Get in touch</CardTitle>
@@ -271,7 +317,13 @@ const Contact = () => {
                       href={info.href}
                       target={info.href.startsWith("http") ? "_blank" : undefined}
                       rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="flex items-center space-x-3 p-3 rounded-lg border border-border/50 hover:border-primary/50 transition-colors group"
+                      className={`flex items-center space-x-3 p-3 rounded-lg border border-border/50 hover:border-primary/50 transition-all duration-300 group ${
+                        isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+                      }`}
+                      style={{
+                        transitionDelay: isVisible ? `${400 + index * 100}ms` : "0ms",
+                        transitionDuration: "600ms",
+                      }}
                     >
                       <div className="text-primary group-hover:text-accent transition-colors">{info.icon}</div>
                       <div>
@@ -284,7 +336,13 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-border/50">
+            <Card className={`border-border/50 transition-all duration-1000 ease-out ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{
+              transitionDelay: isVisible ? "800ms" : "0ms",
+              transitionDuration: "800ms",
+            }}>
               <CardHeader>
                 <CardTitle className="text-xl">Response Time</CardTitle>
               </CardHeader>

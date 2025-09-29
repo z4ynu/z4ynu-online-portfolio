@@ -91,7 +91,7 @@ const Hobbies = () => {
   ]
 
   return (
-    <section id="hobbies" className="py-20 px-6 md:px-8 bg-hobbies">
+    <section id="hobbies" className="py-20 px-6 md:px-8 bg-techstack">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="text-sm text-muted-foreground uppercase tracking-wider mb-4">Hobbies</div>

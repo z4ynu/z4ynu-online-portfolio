@@ -125,17 +125,17 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-row gap-3 sm:gap-6 justify-center">
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="text-lg px-8 py-4 font-semibold bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl active:shadow-md active:translate-y-1 transition-all duration-200 w-full sm:w-auto transform hover:scale-105"
+                className="text-base sm:text-lg px-4 sm:px-8 py-3 sm:py-4 font-semibold bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl active:shadow-md active:translate-y-1 transition-all duration-200 transform hover:scale-105 flex-1 sm:flex-none"
               >
                 Get In Touch
               </Button>
               <Button
                 variant="outline"
                 onClick={() => scrollToSection("projects")}
-                className="text-lg px-8 py-4 font-semibold border-2 border-primary/50 hover:border-primary hover:bg-primary/10 hover:text-white shadow-lg hover:shadow-xl active:shadow-md active:translate-y-1 transition-all duration-200 w-full sm:w-auto transform hover:scale-105"
+                className="text-base sm:text-lg px-4 sm:px-8 py-3 sm:py-4 font-semibold border-2 border-primary/50 hover:border-primary hover:bg-primary/10 hover:text-white shadow-lg hover:shadow-xl active:shadow-md active:translate-y-1 transition-all duration-200 transform hover:scale-105 flex-1 sm:flex-none"
               >
                 View My Work
               </Button>
@@ -285,16 +285,16 @@ const Hero = () => {
 
           {/* Right Column */}
           <div
-            className={`hidden lg:flex items-center justify-center transition-all duration-1000 ease-out delay-400 ${
+            className={`flex items-center justify-center transition-all duration-1000 ease-out delay-400 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
             }`}
           >
             <div className="relative">
-              <div className="w-[432px] h-[432px] rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <div className="w-96 h-96 rounded-full bg-card border border-border flex items-center justify-center">
-                  <div className="w-96 h-96 rounded-full bg-card border border-border flex items-center justify-center overflow-hidden">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-[432px] lg:h-[432px] rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mx-auto">
+                <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full bg-card border border-border flex items-center justify-center">
+                  <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full bg-card border border-border flex items-center justify-center overflow-hidden">
                     <img
                       src="/images/zaynu.jpg"
                       alt="Zy Henzo S. Nuñez"
@@ -304,9 +304,9 @@ const Hero = () => {
                 </div>
               </div>
               {/* Floating elements */}
-              <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center shadow-xl animate-float hover:scale-110 transition-transform duration-300">
+              <div className="absolute -top-6 -right-6 sm:-top-8 sm:-right-8 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center shadow-xl animate-float hover:scale-110 transition-transform duration-300">
                 <svg
-                  className="w-12 h-12 text-primary animate-spin-slow"
+                  className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-primary animate-spin-slow"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -319,9 +319,9 @@ const Hero = () => {
                   />
                 </svg>
               </div>
-              <div className="absolute -bottom-8 -left-8 w-20 h-20 rounded-full bg-accent/20 border-2 border-accent/40 flex items-center justify-center shadow-xl animate-float-delayed hover:scale-110 transition-transform duration-300">
+              <div className="absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-accent/20 border-2 border-accent/40 flex items-center justify-center shadow-xl animate-float-delayed hover:scale-110 transition-transform duration-300">
                 <svg
-                  className="w-10 h-10 text-accent animate-pulse"
+                  className="w-8 h-8 sm:w-10 sm:h-10 text-accent animate-pulse"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -334,9 +334,9 @@ const Hero = () => {
                   />
                 </svg>
               </div>
-              <div className="absolute top-1/2 -left-12 w-18 h-18 rounded-full bg-pink-500/25 border-2 border-pink-400/50 flex items-center justify-center shadow-xl animate-float hover:scale-110 transition-transform duration-300">
+              <div className="absolute top-1/2 -left-8 sm:-left-12 w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18 rounded-full bg-pink-500/25 border-2 border-pink-400/50 flex items-center justify-center shadow-xl animate-float hover:scale-110 transition-transform duration-300">
                 <svg
-                  className="w-9 h-9 text-pink-400 animate-bounce"
+                  className="w-6 h-6 sm:w-8 sm:h-8 lg:w-9 lg:h-9 text-pink-400 animate-bounce"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

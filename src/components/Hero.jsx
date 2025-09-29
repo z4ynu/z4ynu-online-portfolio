@@ -71,9 +71,9 @@ const Hero = () => {
       {/* Hero Content */}
       <div className="flex-1 flex items-center pt-20">
         <div className="max-w-6xl mx-auto px-6 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column */}
+          {/* Left Column - Content */}
           <div
-            className={`space-y-8 transition-all duration-1000 ease-out delay-200 ${
+            className={`space-y-8 transition-all duration-1000 ease-out delay-200 lg:order-1 order-2 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
@@ -283,9 +283,9 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column */}
+          {/* Right Column - Image */}
           <div
-            className={`flex items-center justify-center transition-all duration-1000 ease-out delay-400 ${
+            className={`flex items-center justify-center transition-all duration-1000 ease-out delay-400 lg:order-2 order-1 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"

@@ -41,41 +41,49 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-sm border-b border-white/10">
-      <nav className="flex items-center justify-between p-6 md:p-8 relative">
-        {/* Logo */}
+      <nav className="flex items-center justify-between md:justify-center p-6 md:p-8 relative">
+        {/* Mobile: Logo on left */}
         <button 
           onClick={() => scrollToSection("hero")}
-          className="text-xl font-bold text-primary hover:text-accent transition-colors duration-200"
+          className="text-xl font-bold text-primary hover:text-accent transition-colors duration-200 md:hidden"
         >
           z4ynu
         </button>
 
-        {/* Desktop Navigation - Centered */}
-        <div className="hidden md:flex items-center space-x-6 absolute left-1/2 transform -translate-x-1/2">
-          <button
-            onClick={() => scrollToSection("about")} 
-            className="text-white/80 hover:text-primary transition-colors font-medium"
+        {/* Desktop: Centered container with logo and navigation */}
+        <div className="hidden md:flex items-center space-x-8">
+          <button 
+            onClick={() => scrollToSection("hero")}
+            className="text-xl font-bold text-primary hover:text-accent transition-colors duration-200"
           >
-            About
+            z4ynu
           </button>
-          <button
-            onClick={() => scrollToSection("services")}
-            className="text-white/80 hover:text-primary transition-colors font-medium"
-          >
-            Services
-          </button>
-          <button
-            onClick={() => scrollToSection("projects")}
-            className="text-white/80 hover:text-primary transition-colors font-medium"
-          >
-            Projects
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="text-white/80 hover:text-primary transition-colors font-medium"
-          >
-            Contact
-          </button>
+          <div className="flex items-center space-x-6">
+            <button
+              onClick={() => scrollToSection("about")} 
+              className="text-white/80 hover:text-primary transition-colors font-medium"
+            >
+              About
+            </button>
+            <button
+              onClick={() => scrollToSection("services")}
+              className="text-white/80 hover:text-primary transition-colors font-medium"
+            >
+              Services
+            </button>
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="text-white/80 hover:text-primary transition-colors font-medium"
+            >
+              Projects
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-white/80 hover:text-primary transition-colors font-medium"
+            >
+              Contact
+            </button>
+          </div>
         </div>
 
         {/* Mobile Burger Menu Button */}

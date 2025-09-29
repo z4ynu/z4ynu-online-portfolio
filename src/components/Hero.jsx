@@ -291,9 +291,9 @@ const Hero = () => {
             }`}
           >
             <div className="relative">
-              <div className="w-96 h-96 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <div className="w-80 h-80 rounded-full bg-card border border-border flex items-center justify-center">
-                  <div className="w-80 h-80 rounded-full bg-card border border-border flex items-center justify-center overflow-hidden">
+              <div className="w-[432px] h-[432px] rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                <div className="w-96 h-96 rounded-full bg-card border border-border flex items-center justify-center">
+                  <div className="w-96 h-96 rounded-full bg-card border border-border flex items-center justify-center overflow-hidden">
                     <img
                       src="/images/zaynu.jpg"
                       alt="Zy Henzo S. Nuñez"

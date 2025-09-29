@@ -37,7 +37,12 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-sm border-b border-white/10">
       <nav className="flex items-center justify-center p-6 md:p-8">
         <div className="flex items-center space-x-8">
-          <div className="text-xl font-bold text-primary">z4ynu</div>
+          <button 
+            onClick={() => scrollToSection("hero")}
+            className="text-xl font-bold text-primary hover:text-accent transition-colors duration-200"
+          >
+            z4ynu
+          </button>
           <div className="hidden md:flex items-center space-x-6">
             <button
               onClick={() => scrollToSection("about")}

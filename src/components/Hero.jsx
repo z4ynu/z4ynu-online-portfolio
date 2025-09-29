@@ -47,6 +47,7 @@ const Hero = () => {
 
   return (
     <section
+      id="hero"
       className={`min-h-screen flex flex-col bg-hero relative overflow-hidden transition-all duration-1000 ease-out ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}

@@ -199,7 +199,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className={`border-border/50 hover:border-primary/50 transition-all duration-300 group overflow-hidden flex flex-col h-full ${
+              className={`border-border/50 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-300 ease-out group overflow-hidden flex flex-col h-full ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
@@ -225,11 +225,11 @@ const Projects = () => {
                 </div>
               </div>
 
-              <CardHeader className="flex-shrink-0">
-                <CardTitle className="text-lg mb-2 line-clamp-2">
+              <CardHeader className="flex-shrink-0 transition-all duration-300 group-hover:bg-card/20">
+                <CardTitle className="text-lg mb-2 line-clamp-2 transition-colors duration-300 group-hover:text-primary">
                   {project.title}
                 </CardTitle>
-                <CardDescription className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                <CardDescription className="text-sm text-muted-foreground leading-relaxed line-clamp-3 transition-colors duration-300 group-hover:text-foreground/80">
                   {project.description}
                 </CardDescription>
               </CardHeader>
@@ -240,7 +240,7 @@ const Projects = () => {
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 text-xs bg-secondary text-secondary-foreground rounded-md"
+                        className="px-2 py-1 text-xs bg-secondary text-secondary-foreground rounded-md transition-all duration-200 group-hover:bg-primary/20 group-hover:text-primary group-hover:scale-105"
                       >
                         {tech}
                       </span>
@@ -253,7 +253,7 @@ const Projects = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="flex-1 bg-transparent"
+                      className="flex-1 bg-transparent hover:bg-primary/10 hover:border-primary transition-all duration-200"
                       onClick={() => window.open(project.links.demo, '_blank')}
                     >
                       <svg
@@ -298,7 +298,7 @@ const Projects = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="flex-1 bg-transparent opacity-50 cursor-not-allowed"
+                      className="flex-1 bg-transparent opacity-50 cursor-not-allowed hover:opacity-60 transition-opacity duration-200"
                       disabled
                       title="Demo not available"
                     >
@@ -322,7 +322,7 @@ const Projects = () => {
                     <Button 
                       variant="ghost" 
                       size="sm" 
-                      className="flex-1"
+                      className="flex-1 hover:bg-primary/10 hover:text-primary transition-all duration-200"
                       onClick={() => window.open(project.links.github, '_blank')}
                     >
                       <svg
@@ -360,7 +360,7 @@ const Projects = () => {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="flex-1 opacity-50 cursor-not-allowed"
+                      className="flex-1 opacity-50 cursor-not-allowed hover:opacity-60 transition-opacity duration-200"
                       disabled
                       title="Code not available"
                     >

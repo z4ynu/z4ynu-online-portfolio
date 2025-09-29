@@ -81,18 +81,18 @@ const Hero = () => {
           >
             <div className="space-y-4">
               <div className="text-center">
-                <h1 className="text-3xl md:text-5xl font-black border-b-2 border-primary/30 pb-2">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-black border-b-2 border-primary/30 pb-2">
                   Zy Henzo S. Nuñez
                 </h1>
               </div>
               <div className="border border-border/50 rounded-lg p-4 bg-card/20 backdrop-blur-sm text-center">
-                <div className="text-lg md:text-xl text-muted-foreground font-semibold">
+                <div className="text-lg md:text-lg lg:text-xl text-muted-foreground font-semibold">
                   Computer Science Student
                 </div>
               </div>
               <div className="border border-border/50 rounded-lg p-4 bg-card/20 backdrop-blur-sm text-center">
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  I’m a 4th-year Computer Science student at UM Tagum College
+                <p className="text-base md:text-base lg:text-lg text-muted-foreground leading-relaxed">
+                  I'm a 4th-year Computer Science student at UM Tagum College
                   with a focus on web development. Beyond coding, I enjoy
                   playing instruments like guitar, bass, and drums, watching
                   anime, and playing games like Dota 2, Valorant,
@@ -106,19 +106,19 @@ const Hero = () => {
               <div className="flex flex-wrap gap-4 justify-center">
                 <Badge
                   variant="secondary"
-                  className="text-base px-4 py-2 font-semibold"
+                  className="text-sm md:text-base px-3 md:px-4 py-1.5 md:py-2 font-medium md:font-semibold"
                 >
                   Web Developer
                 </Badge>
                 <Badge
                   variant="secondary"
-                  className="text-base px-4 py-2 font-semibold"
+                  className="text-sm md:text-base px-3 md:px-4 py-1.5 md:py-2 font-medium md:font-semibold"
                 >
                   Freelance Writer
                 </Badge>
                 <Badge
                   variant="secondary"
-                  className="text-base px-4 py-2 font-semibold"
+                  className="text-sm md:text-base px-3 md:px-4 py-1.5 md:py-2 font-medium md:font-semibold"
                 >
                   Music Tutor
                 </Badge>
@@ -128,14 +128,14 @@ const Hero = () => {
             <div className="flex flex-row gap-3 sm:gap-6 justify-center">
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="text-base sm:text-lg px-4 sm:px-8 py-3 sm:py-4 font-semibold bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl active:shadow-md active:translate-y-1 transition-all duration-200 transform hover:scale-105 flex-1 sm:flex-none"
+                className="text-sm md:text-base px-3 md:px-8 py-2 md:py-4 font-medium md:font-semibold bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl active:shadow-md active:translate-y-1 transition-all duration-200 transform hover:scale-105 flex-1 sm:flex-none"
               >
                 Get In Touch
               </Button>
               <Button
                 variant="outline"
                 onClick={() => scrollToSection("projects")}
-                className="text-base sm:text-lg px-4 sm:px-8 py-3 sm:py-4 font-semibold border-2 border-primary/50 hover:border-primary hover:bg-primary/10 hover:text-white shadow-lg hover:shadow-xl active:shadow-md active:translate-y-1 transition-all duration-200 transform hover:scale-105 flex-1 sm:flex-none"
+                className="text-sm md:text-base px-3 md:px-8 py-2 md:py-4 font-medium md:font-semibold border-2 border-primary/50 hover:border-primary hover:bg-primary/10 hover:text-white shadow-lg hover:shadow-xl active:shadow-md active:translate-y-1 transition-all duration-200 transform hover:scale-105 flex-1 sm:flex-none"
               >
                 View My Work
               </Button>

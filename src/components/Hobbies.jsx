@@ -3,8 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 const Hobbies = () => {
   const hobbies = [
     {
-      title: "Music Production",
-      description: "Creating beats and melodies using digital audio workstations and exploring different genres.",
+      title: "Music",
+      description: "Learning and playing songs across different genres and instruments. Always eager to pick up anything that sounds catchy.",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -19,7 +19,7 @@ const Hobbies = () => {
     },
     {
       title: "Gaming",
-      description: "Exploring virtual worlds, strategy games, and connecting with friends through online gaming.",
+      description: "Competing in ranked matches and tournaments. Focusing on competitive games like Valorant and other skill-based titles.",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -34,7 +34,7 @@ const Hobbies = () => {
     },
     {
       title: "Reading",
-      description: "Diving into tech blogs, science fiction novels, and continuous learning through books.",
+      description: "Reading manga and manhwa series, exploring different art styles and storylines across various genres.",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -64,7 +64,7 @@ const Hobbies = () => {
     },
     {
       title: "Fitness",
-      description: "Staying active through workouts, running, and maintaining a healthy lifestyle balance.",
+      description: "Running regularly and doing home workouts. Focusing on cardio and bodyweight exercises for staying fit.",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />

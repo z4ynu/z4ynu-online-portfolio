@@ -153,7 +153,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className={`border-border/50 hover:border-primary/50 transition-all duration-300 group overflow-hidden ${
+              className={`border-border/50 hover:border-primary/50 transition-all duration-300 group overflow-hidden flex flex-col h-full ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
@@ -179,21 +179,17 @@ const Projects = () => {
                 </div>
               </div>
 
-              <CardHeader>
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <CardTitle className="text-lg mb-2">
-                      {project.title}
-                    </CardTitle>
-                    <CardDescription className="text-sm text-muted-foreground leading-relaxed">
-                      {project.description}
-                    </CardDescription>
-                  </div>
-                </div>
+              <CardHeader className="flex-shrink-0">
+                <CardTitle className="text-lg mb-2 line-clamp-2">
+                  {project.title}
+                </CardTitle>
+                <CardDescription className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                  {project.description}
+                </CardDescription>
               </CardHeader>
 
-              <CardContent className="space-y-4">
-                <div>
+              <CardContent className="flex flex-col flex-1 space-y-4 pb-6">
+                <div className="flex-1">
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, techIndex) => (
                       <span
@@ -206,7 +202,7 @@ const Projects = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-3 pt-2">
+                <div className="flex items-center space-x-3 mt-auto pt-4">
                   <Button
                     variant="outline"
                     size="sm"

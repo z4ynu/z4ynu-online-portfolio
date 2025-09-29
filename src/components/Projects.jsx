@@ -131,11 +131,56 @@ const Projects = () => {
     <section
       ref={sectionRef}
       id="projects"
-      className={`py-20 px-6 md:px-8 bg-projects transition-all duration-1000 ease-out ${
+      className={`py-20 px-6 md:px-8 bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-500/10 relative overflow-hidden transition-all duration-1000 ease-out ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
-      <div className="max-w-6xl mx-auto">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Floating circles - positioned on the sides of the cards */}
+        <div className="absolute top-1/4 left-8 w-4 h-4 bg-primary/20 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/3 right-8 w-6 h-6 bg-accent/20 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-12 w-3 h-3 bg-blue-400/20 rounded-full animate-pulse delay-2000"></div>
+        <div className="absolute top-2/3 right-12 w-5 h-5 bg-green-400/20 rounded-full animate-pulse delay-500"></div>
+        <div className="absolute bottom-1/3 left-6 w-4 h-4 bg-purple-400/20 rounded-full animate-pulse delay-1500"></div>
+        <div className="absolute bottom-1/4 right-6 w-3 h-3 bg-pink-400/20 rounded-full animate-pulse delay-3000"></div>
+
+        {/* Gradient orbs - positioned on the sides */}
+        <div className="absolute top-1/3 left-4 w-32 h-32 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-xl animate-float"></div>
+        <div className="absolute top-1/2 right-4 w-24 h-24 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-xl animate-float-delayed"></div>
+        <div className="absolute bottom-1/3 left-8 w-28 h-28 bg-gradient-to-r from-green-400/10 to-yellow-400/10 rounded-full blur-xl animate-float"></div>
+
+        {/* Project-themed decorative elements */}
+        <div className="absolute top-1/4 right-16 w-2 h-2 bg-yellow-400/30 rounded-full animate-bounce"></div>
+        <div className="absolute top-2/3 left-16 w-3 h-3 bg-pink-400/30 rounded-full animate-bounce delay-1000"></div>
+        <div className="absolute bottom-1/3 right-20 w-2 h-2 bg-orange-400/30 rounded-full animate-bounce delay-2000"></div>
+        
+        {/* Additional floating elements - positioned on the sides of cards */}
+        <div className="absolute top-1/4 left-4 w-16 h-16 rounded-full bg-primary/15 border-2 border-primary/30 flex items-center justify-center shadow-xl animate-float hover:scale-110 transition-transform duration-300">
+          <svg className="w-8 h-8 text-primary animate-spin-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+        </div>
+        
+        <div className="absolute top-1/2 right-4 w-14 h-14 rounded-full bg-accent/15 border-2 border-accent/30 flex items-center justify-center shadow-xl animate-float-delayed hover:scale-110 transition-transform duration-300">
+          <svg className="w-7 h-7 text-accent animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          </svg>
+        </div>
+
+        <div className="absolute bottom-1/3 left-8 w-12 h-12 rounded-full bg-green-500/15 border-2 border-green-400/30 flex items-center justify-center shadow-xl animate-float hover:scale-110 transition-transform duration-300">
+          <svg className="w-6 h-6 text-green-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+          </svg>
+        </div>
+
+        <div className="absolute top-2/3 right-8 w-10 h-10 rounded-full bg-purple-500/15 border-2 border-purple-400/30 flex items-center justify-center shadow-xl animate-float-delayed hover:scale-110 transition-transform duration-300">
+          <svg className="w-5 h-5 text-purple-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+      </div>
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="text-sm text-muted-foreground uppercase tracking-wider mb-4">
             Projects

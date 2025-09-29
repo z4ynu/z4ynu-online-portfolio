@@ -48,35 +48,19 @@ const Hobbies = () => {
       color: "from-green-500/20 to-emerald-500/20 border-green-500/30",
     },
     {
-      title: "Photography",
-      description: "Capturing moments and exploring creative composition through digital and film photography.",
+      title: "Entertainment",
+      description: "Enjoying anime series, sitcoms, and diving into manga worlds for storytelling and relaxation.",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
-            d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
-          />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      ),
-      color: "from-orange-500/20 to-red-500/20 border-orange-500/30",
-    },
-    {
-      title: "Cooking",
-      description: "Experimenting with different cuisines and finding the perfect balance of flavors in the kitchen.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"
+            d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
           />
         </svg>
       ),
-      color: "from-yellow-500/20 to-orange-500/20 border-yellow-500/30",
+      color: "from-purple-500/20 to-pink-500/20 border-purple-500/30",
     },
     {
       title: "Fitness",

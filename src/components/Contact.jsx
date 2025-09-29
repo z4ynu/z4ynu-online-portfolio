@@ -5,14 +5,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
+import emailjs from '@emailjs/browser'
+import { toast } from 'sonner'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
-    message: "",
+    message: ""
   })
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleChange = (e) => {
     setFormData({
@@ -21,17 +24,50 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
+    setIsLoading(true)
+
+    try {
+      // Get EmailJS credentials from environment variables
+      const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+      const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+      const USER_EMAIL = import.meta.env.VITE_USER_EMAIL
+
+      // Check if all required environment variables are set
+      if (!PUBLIC_KEY || !SERVICE_ID || !TEMPLATE_ID || !USER_EMAIL) {
+        throw new Error('Missing EmailJS configuration. Please check your .env file.')
+      }
+
+      // Initialize EmailJS with your public key
+      emailjs.init(PUBLIC_KEY)
+
+      // Send the email
+      const result = await emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: USER_EMAIL, // Your email from env variable
+      })
+
+      console.log('Email sent successfully:', result)
+      toast.success('Message sent successfully! I\'ll get back to you soon.')
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      })
+    } catch (error) {
+      console.error('Error sending email:', error)
+      toast.error('Failed to send message. Please try again or contact me directly.')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const contactInfo = [
@@ -199,8 +235,18 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" className="w-full">
-                  Send Message
+                <Button type="submit" className="w-full" disabled={isLoading}>
+                  {isLoading ? (
+                    <>
+                      <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    "Send Message"
+                  )}
                 </Button>
               </form>
             </CardContent>

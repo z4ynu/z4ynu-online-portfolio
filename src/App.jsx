@@ -7,6 +7,7 @@ import Projects from "./components/Projects"
 import Hobbies from "./components/Hobbies"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
+import { Toaster } from "sonner"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Hobbies />
       <Contact />
       <Footer />
+      <Toaster position="top-right" />
     </div>
   )
 }

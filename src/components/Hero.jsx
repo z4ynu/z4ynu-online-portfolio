@@ -85,7 +85,7 @@ const Hero = () => {
                 </h1>
               </div>
               <div className="border border-border/50 rounded-lg p-4 bg-card/20 backdrop-blur-sm text-center">
-                <div className="text-lg md:text-xl text-muted-foreground">
+                <div className="text-lg md:text-xl text-muted-foreground font-semibold">
                   Computer Science Student
                 </div>
               </div>

@@ -58,10 +58,24 @@ const Contact = () => {
       const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
       const USER_EMAIL = import.meta.env.VITE_USER_EMAIL
 
+      console.log('Environment variables:', {
+        PUBLIC_KEY: PUBLIC_KEY ? 'Set' : 'Missing',
+        SERVICE_ID: SERVICE_ID ? 'Set' : 'Missing',
+        TEMPLATE_ID: TEMPLATE_ID ? 'Set' : 'Missing',
+        USER_EMAIL: USER_EMAIL ? 'Set' : 'Missing'
+      })
+
       // Check if all required environment variables are set
       if (!PUBLIC_KEY || !SERVICE_ID || !TEMPLATE_ID || !USER_EMAIL) {
         throw new Error('Missing EmailJS configuration. Please check your .env file.')
       }
+
+      // Validate form data
+      if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+        throw new Error('Please fill in all required fields.')
+      }
+
+      console.log('Form data:', formData)
 
       // Initialize EmailJS with your public key
       emailjs.init(PUBLIC_KEY)
@@ -87,7 +101,32 @@ const Contact = () => {
       })
     } catch (error) {
       console.error('Error sending email:', error)
-      toast.error('Failed to send message. Please try again or contact me directly.')
+      console.error('Error details:', {
+        message: error.message,
+        status: error.status,
+        text: error.text
+      })
+      
+      // More specific error messages
+      if (error.message && error.message.includes('Missing EmailJS configuration')) {
+        toast.error('Configuration error. Please contact the developer.')
+      } else if (error.message && error.message.includes('fill in all required fields')) {
+        toast.error('Please fill in all required fields.')
+      } else if (error.status === 400) {
+        if (error.text && error.text.includes('service ID not found')) {
+          toast.error('EmailJS service not found. Please contact the developer.')
+        } else if (error.text && error.text.includes('template')) {
+          toast.error('EmailJS template not found. Please contact the developer.')
+        } else {
+          toast.error('Invalid form data. Please check your inputs.')
+        }
+      } else if (error.status === 401) {
+        toast.error('Authentication failed. Please try again later.')
+      } else if (error.status === 403) {
+        toast.error('Service access denied. Please contact the developer.')
+      } else {
+        toast.error(`Failed to send message: ${error.message || error.text || 'Unknown error'}`)
+      }
     } finally {
       setIsLoading(false)
     }

@@ -114,7 +114,7 @@ const Hobbies = () => {
           <Card className="border-border/50 bg-card/50 max-w-3xl mx-auto">
             <CardContent className="pt-8 pb-8">
               <blockquote className="text-xl md:text-2xl font-medium text-balance leading-relaxed mb-4">
-                "Life is about finding the perfect harmony between passion, creativity, and continuous growth."
+                "Repetition is key. Every expert was once a beginner who never stopped practicing."
               </blockquote>
               <cite className="text-muted-foreground">— Zy Henzo S. Nuñez</cite>
             </CardContent>

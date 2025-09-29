@@ -73,8 +73,54 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="py-20 px-6 md:px-8 bg-contact">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="py-20 px-6 md:px-8 bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-500/10 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Floating circles */}
+        <div className="absolute top-1/4 left-8 w-4 h-4 bg-primary/20 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/3 right-8 w-6 h-6 bg-accent/20 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-12 w-3 h-3 bg-blue-400/20 rounded-full animate-pulse delay-2000"></div>
+        <div className="absolute top-2/3 right-12 w-5 h-5 bg-green-400/20 rounded-full animate-pulse delay-500"></div>
+        <div className="absolute bottom-1/3 left-6 w-4 h-4 bg-purple-400/20 rounded-full animate-pulse delay-1500"></div>
+        <div className="absolute bottom-1/4 right-6 w-3 h-3 bg-pink-400/20 rounded-full animate-pulse delay-3000"></div>
+
+        {/* Gradient orbs */}
+        <div className="absolute top-1/3 left-4 w-32 h-32 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-xl animate-float"></div>
+        <div className="absolute top-1/2 right-4 w-24 h-24 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-xl animate-float-delayed"></div>
+        <div className="absolute bottom-1/3 left-8 w-28 h-28 bg-gradient-to-r from-green-400/10 to-yellow-400/10 rounded-full blur-xl animate-float"></div>
+
+        {/* Contact-themed decorative elements */}
+        <div className="absolute top-1/4 right-16 w-2 h-2 bg-yellow-400/30 rounded-full animate-bounce"></div>
+        <div className="absolute top-2/3 left-16 w-3 h-3 bg-pink-400/30 rounded-full animate-bounce delay-1000"></div>
+        <div className="absolute bottom-1/3 right-20 w-2 h-2 bg-orange-400/30 rounded-full animate-bounce delay-2000"></div>
+        
+        {/* Contact-themed floating elements */}
+        <div className="absolute top-1/4 left-4 w-16 h-16 rounded-full bg-primary/15 border-2 border-primary/30 flex items-center justify-center shadow-xl animate-float hover:scale-110 transition-transform duration-300">
+          <svg className="w-8 h-8 text-primary animate-spin-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-3.582 8-8 8a9 9 0 01-9-9c0-4.418 3.582-8 8-8 4.418 0 8 3.592 8 8z" />
+          </svg>
+        </div>
+        
+        <div className="absolute top-1/2 right-4 w-14 h-14 rounded-full bg-accent/15 border-2 border-accent/30 flex items-center justify-center shadow-xl animate-float-delayed hover:scale-110 transition-transform duration-300">
+          <svg className="w-7 h-7 text-accent animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+        </div>
+
+        <div className="absolute bottom-1/3 left-8 w-12 h-12 rounded-full bg-green-500/15 border-2 border-green-400/30 flex items-center justify-center shadow-xl animate-float hover:scale-110 transition-transform duration-300">
+          <svg className="w-6 h-6 text-green-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+        </div>
+
+        <div className="absolute top-2/3 right-8 w-10 h-10 rounded-full bg-purple-500/15 border-2 border-purple-400/30 flex items-center justify-center shadow-xl animate-float-delayed hover:scale-110 transition-transform duration-300">
+          <svg className="w-5 h-5 text-purple-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+          </svg>
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="text-sm text-muted-foreground uppercase tracking-wider mb-4">Contact</div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">Let's Work Together</h2>

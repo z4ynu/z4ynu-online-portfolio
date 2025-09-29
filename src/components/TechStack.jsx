@@ -84,7 +84,7 @@ const TechStack = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 sm:gap-8 lg:gap-10">
           {technologies.map((tech, index) => (
             <div
               key={tech.name}
@@ -95,11 +95,11 @@ const TechStack = () => {
                 transitionDelay: `${index * 150}ms`
               }}
             >
-              <div className="flex flex-col items-center justify-center p-8 rounded-lg hover:bg-primary/5 transition-all duration-300 hover:scale-105">
+              <div className="flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 rounded-lg hover:bg-primary/5 transition-all duration-300 hover:scale-105">
                 <img 
                   src={tech.icon} 
                   alt={tech.name}
-                  className="w-20 h-20 object-contain"
+                  className="w-32 h-32 sm:w-24 sm:h-24 lg:w-20 lg:h-20 object-contain"
                 />
               </div>
             </div>

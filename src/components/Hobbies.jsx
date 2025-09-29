@@ -85,11 +85,11 @@ const Hobbies = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex gap-6 justify-center">
           {hobbies.map((hobby, index) => (
             <Card
               key={index}
-              className={`border-border/50 hover:border-primary/50 transition-all duration-300 group relative overflow-hidden`}
+              className={`border-border/50 hover:border-primary/50 transition-all duration-300 group relative overflow-hidden w-96`}
             >
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${hobby.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}

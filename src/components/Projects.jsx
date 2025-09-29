@@ -295,7 +295,28 @@ const Projects = () => {
                       Demo (NDA)
                     </Button>
                   ) : (
-                    <div className="flex-1"></div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 bg-transparent opacity-50 cursor-not-allowed"
+                      disabled
+                      title="Demo not available"
+                    >
+                      <svg
+                        className="w-4 h-4 mr-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                      Demo (N/A)
+                    </Button>
                   )}
                   {project.links.github ? (
                     <Button 
@@ -336,7 +357,27 @@ const Projects = () => {
                       Code (NDA)
                     </Button>
                   ) : (
-                    <div className="flex-1"></div>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="flex-1 opacity-50 cursor-not-allowed"
+                      disabled
+                      title="Code not available"
+                    >
+                      <svg
+                        className="w-4 h-4 mr-2"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M8 14v3h8v-3a3 3 0 10-8 0zM7 7V4a1 1 0 012 0v3a1 1 0 11-2 0z"
+                        />
+                      </svg>
+                      Code (N/A)
+                    </Button>
                   )}
                 </div>
               </CardContent>

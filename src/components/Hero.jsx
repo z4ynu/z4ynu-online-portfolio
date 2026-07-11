@@ -296,7 +296,7 @@ const Hero = () => {
                 <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full bg-card border border-border flex items-center justify-center">
                   <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full bg-card border border-border flex items-center justify-center overflow-hidden">
                     <img
-                      src="/images/zaynu.jpg"
+                      src="/images/zaynu.jpg.jpg"
                       alt="Zy Henzo S. Nuñez"
                       className="w-full h-full object-cover"
                     />

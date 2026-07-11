@@ -1,4 +1,4 @@
-# Z4ynu Portfolio
+# z4ynu's den
 
 A modern, responsive portfolio website showcasing my skills in web development, freelance writing, and music tutoring. Built with React and Vite, featuring smooth animations, interactive components, and a professional design.
 

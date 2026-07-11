@@ -128,7 +128,7 @@ const Services = () => {
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <div className="text-sm text-muted-foreground uppercase tracking-wider mb-4">Services</div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">What I Bring to the Table</h2>
@@ -138,25 +138,25 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8 items-stretch">
           {services.map((service, index) => (
-            <Card key={index} className="border-border/50 hover:border-primary/50 transition-all duration-300 ease-out hover:shadow-lg hover:bg-card/10 hover:scale-105 group h-full flex flex-col">
-              <CardHeader className="space-y-4">
-                <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+            <Card key={index} className="border-border/50 hover:border-primary/50 transition-all duration-300 ease-out hover:shadow-lg hover:bg-card/10 hover:scale-[1.01] group h-full flex flex-col overflow-hidden">
+              <CardHeader className="space-y-4 min-h-[150px]">
+                <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
                   {service.icon}
                 </div>
                 <div>
-                  <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
-                  <CardDescription className="text-muted-foreground">{service.description}</CardDescription>
+                  <CardTitle className="text-lg mb-2">{service.title}</CardTitle>
+                  <CardDescription className="text-sm text-muted-foreground leading-relaxed">{service.description}</CardDescription>
                 </div>
               </CardHeader>
 
-              <CardContent className="space-y-6 flex-grow flex flex-col">
-                <div>
+              <CardContent className="flex-1 flex flex-col">
+                <div className="flex-1">
                   <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider">Key Services</h4>
                   <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start space-x-2 text-sm text-muted-foreground">
+                      <li key={featureIndex} className="flex items-start space-x-2 text-sm text-muted-foreground leading-relaxed">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
                         <span>{feature}</span>
                       </li>
@@ -164,7 +164,7 @@ const Services = () => {
                   </ul>
                 </div>
 
-                <div className="flex-grow">
+                <div className="mt-6 pt-4 border-t border-border/30">
                   <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider">
                     {service.title === "Freelance Writing" ? "Writing Focus" :
                      service.title === "Music Tutoring" ? "Instruments & Skills" :

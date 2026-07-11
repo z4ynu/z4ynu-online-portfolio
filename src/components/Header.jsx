@@ -41,26 +41,28 @@ const Header = () => {
 
   return (
     <>
-      <aside className="hidden md:flex md:flex-col md:fixed md:top-0 md:left-0 md:h-screen md:w-56 z-50 bg-black/20 backdrop-blur-sm border-r border-white/10">
-        <button
-          onClick={() => scrollToSection("hero")}
-          className="text-xl font-bold text-primary hover:text-accent transition-colors duration-200 px-8 py-8 text-left"
-        >
-          z4ynu
-        </button>
+      <div className="group hidden md:block fixed left-0 top-0 z-50 h-screen w-4">
+        <aside className="absolute left-0 top-0 flex h-screen w-56 -translate-x-full flex-col bg-black/20 backdrop-blur-sm border-r border-white/10 transition-transform duration-300 ease-out group-hover:translate-x-0">
+          <button
+            onClick={() => scrollToSection("hero")}
+            className="text-xl font-bold text-primary hover:text-accent transition-colors duration-200 px-8 py-8 text-left"
+          >
+            z4ynu
+          </button>
 
-        <nav className="flex flex-col space-y-2 px-6 mt-4">
-          {NAV_ITEMS.map(({ id, label }) => (
-            <button
-              key={id}
-              onClick={() => scrollToSection(id)}
-              className="text-left px-2 py-3 rounded-md text-white/80 hover:text-primary hover:bg-white/5 transition-colors font-medium"
-            >
-              {label}
-            </button>
-          ))}
-        </nav>
-      </aside>
+          <nav className="mt-4 flex flex-col space-y-2 px-6">
+            {NAV_ITEMS.map(({ id, label }) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className="text-left px-2 py-3 rounded-md text-white/80 hover:text-primary hover:bg-white/5 transition-colors font-medium"
+              >
+                {label}
+              </button>
+            ))}
+          </nav>
+        </aside>
+      </div>
 
       <header className="md:hidden fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-sm border-b border-white/10">
         <nav className="flex items-center justify-between p-6">

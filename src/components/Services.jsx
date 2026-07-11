@@ -74,6 +74,28 @@ const Services = () => {
       ),
     },
     {
+      title: "Video Editing",
+      description: "Crafting polished videos for social media, YouTube, and promotional content with a clean cinematic feel",
+      features: [
+        "Short-form and long-form video editing",
+        "Color correction and visual consistency",
+        "Motion graphics and text overlays",
+        "Captioning and subtitle integration",
+        "Format optimization for different platforms",
+      ],
+      technologies: ["Premiere Pro", "CapCut", "DaVinci Resolve", "After Effects", "Adobe Photoshop"],
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M4 6h7a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z"
+          />
+        </svg>
+      ),
+    },
+    {
       title: "Music Tutoring",
       description: "Sharing the joy of music through personalized instruction and guidance",
       features: [
@@ -93,6 +115,7 @@ const Services = () => {
             d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
           />
         </svg>
+        
       ),
     },
   ]
@@ -143,8 +166,9 @@ const Services = () => {
 
                 <div className="flex-grow">
                   <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider">
-                    {service.title === "Freelance Writing" ? "Writing Focus" : 
-                     service.title === "Music Tutoring" ? "Instruments & Skills" : "Technologies"}
+                    {service.title === "Freelance Writing" ? "Writing Focus" :
+                     service.title === "Music Tutoring" ? "Instruments & Skills" :
+                     service.title === "Video Editing" ? "Editing Tools" : "Technologies"}
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {service.technologies.map((tech, techIndex) => (

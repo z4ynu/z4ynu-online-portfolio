@@ -1,149 +1,126 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
+
+const NAV_ITEMS = [
+  { id: "about", label: "About" },
+  { id: "services", label: "Services" },
+  { id: "projects", label: "Projects" },
+  { id: "contact", label: "Contact" },
+];
 
 const Header = () => {
-  const [isScrolling, setIsScrolling] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      setIsScrolling(true);
-      setIsMenuOpen(false); // Close mobile menu when navigating
-      
-      // Add fade transition effect
+      setIsMenuOpen(false);
+
       element.style.opacity = "0";
       element.style.transition = "opacity 0.8s ease-out";
-      
-      // Smooth scroll to section
+
       element.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
-      
-      // Animate the section in after scroll starts
+
       setTimeout(() => {
         element.style.opacity = "1";
       }, 300);
-      
-      // Reset transition and scrolling state after animation completes
+
       setTimeout(() => {
         element.style.transition = "";
-        setIsScrolling(false);
       }, 1100);
-      }
     }
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-sm border-b border-white/10">
-      <nav className="flex items-center justify-between md:justify-center p-6 md:p-8 relative">
-        {/* Mobile: Logo on left */}
-        <button 
+    <>
+      <aside className="hidden md:flex md:flex-col md:fixed md:top-0 md:left-0 md:h-screen md:w-56 z-50 bg-black/20 backdrop-blur-sm border-r border-white/10">
+        <button
           onClick={() => scrollToSection("hero")}
-          className="text-xl font-bold text-primary hover:text-accent transition-colors duration-200 md:hidden"
+          className="text-xl font-bold text-primary hover:text-accent transition-colors duration-200 px-8 py-8 text-left"
         >
           z4ynu
         </button>
 
-        {/* Desktop: Centered container with logo and navigation */}
-        <div className="hidden md:flex items-center space-x-8">
-          <button 
+        <nav className="flex flex-col space-y-2 px-6 mt-4">
+          {NAV_ITEMS.map(({ id, label }) => (
+            <button
+              key={id}
+              onClick={() => scrollToSection(id)}
+              className="text-left px-2 py-3 rounded-md text-white/80 hover:text-primary hover:bg-white/5 transition-colors font-medium"
+            >
+              {label}
+            </button>
+          ))}
+        </nav>
+      </aside>
+
+      <header className="md:hidden fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-sm border-b border-white/10">
+        <nav className="flex items-center justify-between p-6">
+          <button
             onClick={() => scrollToSection("hero")}
             className="text-xl font-bold text-primary hover:text-accent transition-colors duration-200"
           >
             z4ynu
           </button>
-          <div className="flex items-center space-x-6">
-            <button
-              onClick={() => scrollToSection("about")} 
-              className="text-white/80 hover:text-primary transition-colors font-medium"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-white/80 hover:text-primary transition-colors font-medium"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection("projects")}
-              className="text-white/80 hover:text-primary transition-colors font-medium"
-            >
-              Projects
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-white/80 hover:text-primary transition-colors font-medium"
-            >
-              Contact
-            </button>
-          </div>
-        </div>
 
-        {/* Mobile Burger Menu Button */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
-          aria-label="Toggle menu"
-        >
-          <span 
-            className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
-              isMenuOpen ? 'rotate-45 translate-y-1.5' : ''
-            }`}
-          ></span>
-          <span 
-            className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
-              isMenuOpen ? 'opacity-0' : ''
-            }`}
-          ></span>
-          <span 
-            className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
-              isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
-            }`}
-          ></span>
-        </button>
-      </nav>
+          <button
+            onClick={toggleMenu}
+            className="flex flex-col justify-center items-center w-8 h-8 space-y-1"
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
+                isMenuOpen ? "rotate-45 translate-y-1.5" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
+                isMenuOpen ? "opacity-0" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
+                isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+              }`}
+            ></span>
+          </button>
+        </nav>
+      </header>
 
-      {/* Mobile Navigation Menu */}
-      <div 
-        className={`md:hidden transition-all duration-300 bg-black/95 backdrop-blur-md border-b border-white/10 overflow-hidden ${
-          isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+      <div
+        className={`md:hidden fixed top-0 right-0 h-screen w-64 z-40 bg-black/95 backdrop-blur-md border-l border-white/10 transition-transform duration-300 ease-out ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="px-6 py-4 space-y-3">
-          <button
-            onClick={() => scrollToSection("about")}
-            className="block w-full text-left text-white/80 hover:text-primary transition-colors font-medium py-2"
-          >
-            About
-          </button>
-          <button
-            onClick={() => scrollToSection("services")}
-            className="block w-full text-left text-white/80 hover:text-primary transition-colors font-medium py-2"
-          >
-            Services
-          </button>
-          <button
-            onClick={() => scrollToSection("projects")}
-            className="block w-full text-left text-white/80 hover:text-primary transition-colors font-medium py-2"
-          >
-            Projects
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="block w-full text-left text-white/80 hover:text-primary transition-colors font-medium py-2"
-          >
-            Contact
-          </button>
+        <div className="flex flex-col space-y-2 px-6 pt-24">
+          {NAV_ITEMS.map(({ id, label }) => (
+            <button
+              key={id}
+              onClick={() => scrollToSection(id)}
+              className="block w-full text-left text-white/80 hover:text-primary transition-colors font-medium py-3"
+            >
+              {label}
+            </button>
+          ))}
         </div>
       </div>
-    </header>
+
+      {isMenuOpen && (
+        <div
+          onClick={toggleMenu}
+          className="md:hidden fixed inset-0 z-30 bg-black/40"
+          aria-hidden="true"
+        />
+      )}
+    </>
   );
 };
 

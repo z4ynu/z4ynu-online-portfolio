@@ -11,7 +11,7 @@ import { Toaster } from "sonner"
 
 function App() {
   return (
-    <div className="min-h-screen text-foreground">
+    <div className="min-h-screen text-foreground md:pl-56">
       <Header />
       <Hero />
       <TechStack />

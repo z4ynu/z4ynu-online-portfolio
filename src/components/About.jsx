@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { useState, useEffect, useRef } from "react"
+import MarkdownContent from "./MarkdownContent"
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -92,46 +93,15 @@ const About = () => {
 
           {/* Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Left Column */}
-            <div className="space-y-8">
-              <div className={`flex items-start space-x-4 transition-all duration-300 ease-out hover:shadow-lg hover:bg-card/10 hover:rounded-lg hover:p-4 hover:-m-4 hover:scale-105 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`} style={{ transitionDelay: '200ms' }}>
-                <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Why Computer Science?</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    I chose Computer Science because of my long-time love for technology, supported and encouraged by my family. At first, I had to choose between pursuing music or IT, but in the end, my path led me to Computer Science. It became the perfect balance of passion and opportunity.
-                  </p>
-                </div>
-              </div>
-
-              <div className={`flex items-start space-x-4 transition-all duration-300 ease-out hover:shadow-lg hover:bg-card/10 hover:rounded-lg hover:p-4 hover:-m-4 hover:scale-105 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`} style={{ transitionDelay: '400ms' }}>
-                <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0"></div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">My Academic Journey</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    I'm currently a 4th-year Computer Science student working on my thesis. The start of college was challenging as I adjusted to new demands, but I've continued to push through and grow. Back in high school, I was a consistent achiever, and that drive still guides me today as I face every challenge with persistence.
-                  </p>
-                </div>
-              </div>
-
-              <div className={`flex items-start space-x-4 transition-all duration-300 ease-out hover:shadow-lg hover:bg-card/10 hover:rounded-lg hover:p-4 hover:-m-4 hover:scale-105 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`} style={{ transitionDelay: '600ms' }}>
-                <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Looking Forward</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    I aspire to become a skilled web developer while also exploring other fields such as mobile development, networking, and cybersecurity. My goal is to keep expanding my knowledge and stay adaptable as technology continues to evolve.
-                  </p>
-                </div>
-              </div>
+            <div className={`transition-all duration-300 ease-out ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`} style={{ transitionDelay: '200ms' }}>
+              <MarkdownContent
+                src="/src/content/about.md"
+                className="prose prose-invert max-w-none text-muted-foreground leading-relaxed space-y-4"
+              />
             </div>
 
-            {/* Right Column */}
             <div className="space-y-8">
               <Card className={`border-border/50 transition-all duration-300 ease-out hover:shadow-lg hover:border-primary/50 hover:bg-card/5 hover:scale-105 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'

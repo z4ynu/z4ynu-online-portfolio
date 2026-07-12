@@ -41,11 +41,11 @@ const Header = () => {
 
   return (
     <>
-      <div className="group hidden md:block fixed left-0 top-0 z-50 h-screen w-4">
-        <div className="pointer-events-none absolute left-2 top-1/2 z-50 -translate-y-1/2 rounded-full border border-white/20 bg-black/50 p-2 text-white/80 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:opacity-0">
+      <div className="group hidden md:block fixed left-0 top-0 z-50 h-screen w-24">
+        <div className="absolute left-2 top-1/2 z-50 flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white/80 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:opacity-0 group-hover:translate-x-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 animate-pulse"
+            className="h-5 w-5 animate-pulse"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -55,7 +55,7 @@ const Header = () => {
           </svg>
         </div>
 
-        <aside className="absolute left-0 top-0 flex h-screen w-56 -translate-x-full flex-col bg-black/20 backdrop-blur-sm border-r border-white/10 transition-transform duration-300 ease-out group-hover:translate-x-0">
+        <aside className="absolute left-0 top-0 flex h-screen w-60 -translate-x-full flex-col bg-black/20 backdrop-blur-sm border-r border-white/10 transition-transform duration-300 ease-out group-hover:translate-x-0">
           <button
             onClick={() => scrollToSection("hero")}
             className="text-xl font-bold text-primary hover:text-accent transition-colors duration-200 px-8 py-8 text-left"

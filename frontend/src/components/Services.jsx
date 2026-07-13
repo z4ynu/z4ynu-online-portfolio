@@ -28,6 +28,15 @@ const Services = () => {
       }
     };
   }, []);
+  const handleServiceClick = (serviceTitle) => {
+    if (serviceTitle === "Web Development") {
+      document.getElementById("projects")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   const services = [
     {
       title: "Web Development",
@@ -139,8 +148,27 @@ const Services = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8 items-stretch">
-          {services.map((service, index) => (
-            <Card key={index} className="border-border/50 hover:border-primary/50 transition-all duration-300 ease-out hover:shadow-lg hover:bg-card/10 hover:scale-[1.01] group h-full flex flex-col overflow-hidden">
+          {services.map((service, index) => {
+            const isClickable = service.title === "Web Development";
+
+            return (
+            <Card
+              key={index}
+              className={`border-border/50 transition-all duration-300 ease-out group h-full flex flex-col overflow-hidden ${
+                isClickable
+                  ? "hover:border-primary/50 hover:shadow-lg hover:bg-card/10 hover:scale-[1.01] cursor-pointer focus-within:ring-2 focus-within:ring-primary"
+                  : "hover:border-primary/50 hover:shadow-lg hover:bg-card/10 hover:scale-[1.01]"
+              }`}
+              onClick={() => handleServiceClick(service.title)}
+              onKeyDown={(event) => {
+                if (isClickable && (event.key === "Enter" || event.key === " ")) {
+                  event.preventDefault();
+                  handleServiceClick(service.title);
+                }
+              }}
+              role={isClickable ? "button" : undefined}
+              tabIndex={isClickable ? 0 : undefined}
+            >
               <CardHeader className="space-y-4 min-h-[150px]">
                 <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
                   {service.icon}
@@ -183,7 +211,8 @@ const Services = () => {
                 </div>
               </CardContent>
             </Card>
-          ))}
+            );
+          })}
         </div>
 
         <div className="text-center mt-12">

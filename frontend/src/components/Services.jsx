@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react"
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -28,13 +29,33 @@ const Services = () => {
       }
     };
   }, []);
+
+  useEffect(() => {
+    if (selectedService) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    };
+  }, [selectedService]);
+
   const handleServiceClick = (serviceTitle) => {
     if (serviceTitle === "Web Development") {
       document.getElementById("projects")?.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
+      return;
     }
+
+    const selected = services.find((service) => service.title === serviceTitle);
+    setSelectedService(selected || null);
   };
 
   const services = [
@@ -49,6 +70,33 @@ const Services = () => {
         "Database Design & Management",
       ],
       technologies: ["React", "Vite", "JavaScript", "HTML5", "CSS", "TailwindCSS", "Node.js", "Firebase", "Supabase", "SQLyog", "MySQL"],
+      workItems: [
+        {
+          title: "FishPet Inventory System",
+          description: "A modern inventory dashboard for aquarium and pet stores with real-time updates and clean UI flows.",
+          tags: ["React", "Firebase", "Tailwind"],
+        },
+        {
+          title: "Hotel Management Portal",
+          description: "A structured internal system for booking, room management, and service tracking.",
+          tags: ["C#", "MySQL", "Desktop UI"],
+        },
+        {
+          title: "Laundry Service Platform",
+          description: "A delivery-focused platform with scheduling, order management, and operational efficiency tools.",
+          tags: ["C#", "Database", "Workflow"],
+        },
+        {
+          title: "AutoHub Landing Page",
+          description: "A polished dealership landing experience with strong visual hierarchy and content structure.",
+          tags: ["PHP", "UI", "Responsive"],
+        },
+        {
+          title: "Portfolio Website",
+          description: "A personal site that combines storytelling, polished visuals, and smooth section transitions.",
+          tags: ["React", "Vite", "Animation"],
+        },
+      ],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -71,6 +119,33 @@ const Services = () => {
         "Social media content optimization",
       ],
       technologies: ["Cybersecurity", "Technology", "Speech Therapy", "AI & Automation", "Professional Rewriting"],
+      workItems: [
+        {
+          title: "Tech Blog Article Series",
+          description: "Explainer content designed to make technical topics easy to understand for broad audiences.",
+          tags: ["Blogging", "Research", "Clarity"],
+        },
+        {
+          title: "Cybersecurity Explainer",
+          description: "A structured article that turns complex security concepts into relatable and practical reading.",
+          tags: ["Cybersecurity", "Simplified", "Tone"],
+        },
+        {
+          title: "AI Workflow Guide",
+          description: "A concise instructional piece that explains automation workflows in a readable format.",
+          tags: ["AI", "Automation", "How-to"],
+        },
+        {
+          title: "Rewritten Professional Content",
+          description: "Refined existing content for stronger organization, voice, and audience clarity.",
+          tags: ["Editing", "Professional", "Rewriting"],
+        },
+        {
+          title: "Social Content Drafts",
+          description: "Short-form posts tailored for engagement, brand voice, and platform-specific formatting.",
+          tags: ["Social Media", "Copy", "Strategy"],
+        },
+      ],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -93,6 +168,33 @@ const Services = () => {
         "Format optimization for different platforms",
       ],
       technologies: ["Premiere Pro", "CapCut", "DaVinci Resolve", "After Effects", "Adobe Photoshop"],
+      workItems: [
+        {
+          title: "Short-Form Promo Reel",
+          description: "A fast-paced promotional edit with polished transitions and strong rhythm.",
+          tags: ["Reels", "Motion", "Branding"],
+        },
+        {
+          title: "YouTube Content Edit",
+          description: "Cleanly structured long-form content with pacing adjustments and subtitle support.",
+          tags: ["YouTube", "Pacing", "Captions"],
+        },
+        {
+          title: "Social Media Teasers",
+          description: "Platform-ready edits built for attention-grabbing hooks and consistency.",
+          tags: ["Short Form", "Engagement", "Visuals"],
+        },
+        {
+          title: "Cinematic Montage",
+          description: "A story-driven montage with color correction and dynamic text layering.",
+          tags: ["Color", "Effects", "Storytelling"],
+        },
+        {
+          title: "Visual Brand Pack",
+          description: "A set of reusable assets and edits designed for a cohesive online presence.",
+          tags: ["Branding", "Templates", "Consistency"],
+        },
+      ],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -115,6 +217,33 @@ const Services = () => {
         "Flexible Learning Approaches",
       ],
       technologies: ["Drums", "Bass", "Guitar", "Gospel Chops", "Shredding", "Music Theory", "Performance"],
+      workItems: [
+        {
+          title: "Beginner Rhythm Lessons",
+          description: "A structured lesson path focused on timing, control, and confidence building.",
+          tags: ["Drums", "Fundamentals", "Practice"],
+        },
+        {
+          title: "Technique Coaching",
+          description: "Hands-on guidance for groove, articulation, and dynamic control across instruments.",
+          tags: ["Technique", "Coaching", "Performance"],
+        },
+        {
+          title: "Theory & Ear Training",
+          description: "Lessons that connect musical theory to practical playing and better listening skills.",
+          tags: ["Theory", "Ear Training", "Music"],
+        },
+        {
+          title: "Performance Prep",
+          description: "Support for live set preparation, stage confidence, and expressive delivery.",
+          tags: ["Performance", "Confidence", "Live"],
+        },
+        {
+          title: "Custom Lesson Plans",
+          description: "Personalized learning plans tailored to the student’s goals, pace, and style.",
+          tags: ["Personalized", "Flexible", "Growth"],
+        },
+      ],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -149,25 +278,19 @@ const Services = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8 items-stretch">
           {services.map((service, index) => {
-            const isClickable = service.title === "Web Development";
-
             return (
             <Card
               key={index}
-              className={`border-border/50 transition-all duration-300 ease-out group h-full flex flex-col overflow-hidden ${
-                isClickable
-                  ? "hover:border-primary/50 hover:shadow-lg hover:bg-card/10 hover:scale-[1.01] cursor-pointer focus-within:ring-2 focus-within:ring-primary"
-                  : "hover:border-primary/50 hover:shadow-lg hover:bg-card/10 hover:scale-[1.01]"
-              }`}
+              className="border-border/50 transition-all duration-300 ease-out group h-full flex flex-col overflow-hidden hover:border-primary/50 hover:shadow-lg hover:bg-card/10 hover:scale-[1.01] cursor-pointer focus-within:ring-2 focus-within:ring-primary"
               onClick={() => handleServiceClick(service.title)}
               onKeyDown={(event) => {
-                if (isClickable && (event.key === "Enter" || event.key === " ")) {
+                if (event.key === "Enter" || event.key === " ") {
                   event.preventDefault();
                   handleServiceClick(service.title);
                 }
               }}
-              role={isClickable ? "button" : undefined}
-              tabIndex={isClickable ? 0 : undefined}
+              role="button"
+              tabIndex={0}
             >
               <CardHeader className="space-y-4 min-h-[150px]">
                 <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
@@ -176,6 +299,9 @@ const Services = () => {
                 <div>
                   <CardTitle className="text-lg mb-2">{service.title}</CardTitle>
                   <CardDescription className="text-sm text-muted-foreground leading-relaxed">{service.description}</CardDescription>
+                  <div className="mt-3 inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
+                    {service.title === "Web Development" ? "Click to view projects" : "Click to explore work"}
+                  </div>
                 </div>
               </CardHeader>
 
@@ -221,6 +347,52 @@ const Services = () => {
           </Button>
         </div>
       </div>
+
+      {selectedService && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm px-4 py-6"
+          onClick={() => setSelectedService(null)}
+        >
+          <div
+            className="w-full max-w-2xl rounded-2xl border border-border/60 bg-card/95 p-6 shadow-2xl shadow-black/30"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Selected Service</p>
+                <h3 className="text-2xl font-semibold mt-2">{selectedService.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">A closer look at work and examples connected to this service.</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setSelectedService(null)}
+                className="rounded-full border border-border/60 p-2 text-muted-foreground transition hover:bg-secondary hover:text-foreground"
+                aria-label="Close service details"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="mt-6 max-h-[60vh] space-y-4 overflow-y-auto pr-2">
+              {selectedService.workItems.map((item, itemIndex) => (
+                <div key={itemIndex} className="rounded-xl border border-border/50 bg-background/70 p-4">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <h4 className="font-semibold">{item.title}</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {item.tags.map((tag, tagIndex) => (
+                        <span key={tagIndex} className="rounded-full bg-primary/10 px-2 py-1 text-xs text-primary">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

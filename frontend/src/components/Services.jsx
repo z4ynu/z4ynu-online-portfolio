@@ -3,6 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "./ui/card"
 import { Button } from "./ui/button"
 import { useState, useEffect, useRef } from "react"
+import { createPortal } from "react-dom"
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -348,13 +349,14 @@ const Services = () => {
         </div>
       </div>
 
-      {selectedService && (
+      {selectedService && createPortal(
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm px-4 py-6"
+          className="fixed inset-0 z-[100] bg-background/80 backdrop-blur-sm overflow-y-auto"
+          style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0 }}
           onClick={() => setSelectedService(null)}
         >
           <div
-            className="w-full max-w-2xl rounded-2xl border border-border/60 bg-card/95 p-6 shadow-2xl shadow-black/30"
+            className="absolute left-1/2 top-1/2 w-[min(92vw,42rem)] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border/60 bg-card/95 p-6 shadow-2xl shadow-black/30"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-start justify-between gap-4">
@@ -391,7 +393,8 @@ const Services = () => {
               ))}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   )

@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { useState, useEffect, useRef } from "react"
 import MarkdownContent from "./MarkdownContent"
+import aboutContent from "../content/about.md?raw"
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -97,7 +98,7 @@ const About = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`} style={{ transitionDelay: '200ms' }}>
               <MarkdownContent
-                src="/src/content/about.md"
+                content={aboutContent}
                 className="prose prose-invert max-w-none text-muted-foreground leading-relaxed space-y-4"
               />
             </div>
